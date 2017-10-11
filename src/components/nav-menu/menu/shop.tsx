@@ -1,10 +1,21 @@
 import * as React from 'react'
-interface Props {}
+interface Props {
+  active:boolean
+  toggle(name:string):void
+}
 
 export default (props:Props) => {
+  const activeStyle = props.active ? {className: "active"} : null
+  
+  const toggleMenu = e => {
+    e.preventDefault()
+    if(!props.active) props.toggle('shop')
+    else props.toggle('')
+  }
+
   return (
-    <li>
-      <a href="#">Shop</a>
+    <li {...activeStyle}>
+      <a href="#" onClick={toggleMenu}>Shop</a>
       <ul className="multi-column">
         <li>
           <ul>
