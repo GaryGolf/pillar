@@ -1,9 +1,17 @@
 import * as React from 'react'
-interface Props {}
+interface Props {
+  active: boolean
+  hide():void
+}
 
 export default (props:Props) => {
+  if(!props.active) return null
+  const cartStyle = props.active
+    ? 'notification pos-right pos-top cart-overview notification--reveal'
+    : 'notification pos-right pos-top cart-overview notification--reveal notification--dismissed'
+
   return (
-    <div className="notification pos-right pos-top cart-overview notification--reveal notification--dismissed" data-notification-link="cart-overview" data-animation="from-right">
+    <div className={cartStyle} data-notification-link="cart-overview" data-animation="from-right">
       <div className="cart-overview__title">
         <h5>Your Cart</h5>
       </div>
@@ -42,7 +50,9 @@ export default (props:Props) => {
           <span className="btn__text">Checkout Now</span>
         </a>
       </div>
-      <div className="notification-close-cross notification-close"></div>
+      <div className="notification-close-cross notification-close"
+        onClick={props.hide}
+      />
     </div>
   )
 }

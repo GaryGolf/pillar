@@ -2,7 +2,9 @@ import * as React from 'react'
 import NavBar from './nav-bar'
 import UtilityBar from './utility-bar'
 
-interface Props {}
+interface Props {
+	openCart():void
+}
 interface State {
 	open: boolean
 }
@@ -26,7 +28,7 @@ export default class NavMenu extends React.Component <Props, State> {
 	return (
 	  <nav className={navStyle} style={{minHeight: "119px"}}>
 			<UtilityBar/>
-			<NavBar/>
+			<NavBar openCart={this.props.openCart}/>
 			<div className="nav-mobile-toggle visible-sm visible-xs"
 				onClick={this.handleNavOpenToggle}>
 				<i className="icon-Align-Right icon icon--sm"></i>

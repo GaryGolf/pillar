@@ -2,15 +2,24 @@ import * as React from 'react'
 import LogoModule from './logo-module'
 import MenuModule from './menu-module'
 
-interface Props {}
+interface Props {
+  openCart():void
+}
 
 export default (props:Props) => {
+  const handleCartOpen = e =>{
+    e.preventDefault()
+    props.openCart()
+  }
   return (
     <div className="nav-bar" data-fixed-at="200">
       <LogoModule/>
       <MenuModule/>
       <div className="nav-module right">
-        <a href="#" className="nav-function" data-notification-link="cart-overview">
+        <a href="#" 
+          className="nav-function" 
+          data-notification-link="cart-overview"
+          onClick={handleCartOpen}>
           <i className="interface-bag icon icon--sm"></i>
           <span>Cart</span>
         </a>
