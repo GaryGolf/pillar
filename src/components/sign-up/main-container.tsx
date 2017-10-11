@@ -7,8 +7,10 @@ interface Props {}
 export default (prop:Props) => {
   return (
     <div className="main-container transition--fade transition--active">
-      <Image/>
-      <Form/>
+      <section className="height-100 cover cover-8">
+        <Image/>
+        <Form/>
+      </section>
       <Footer/>
     </div>
   )
