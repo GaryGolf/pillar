@@ -7,6 +7,7 @@ interface Props {}
 interface State {
   showCart: boolean
   showSearch: boolean
+  fixMenu: boolean
 }
 
 export default class Main extends React.Component <Props, State> {
@@ -14,10 +15,15 @@ export default class Main extends React.Component <Props, State> {
     super(props)
     this.state = {
       showCart: false,
-      showSearch: false
+      showSearch: false,
+      fixMenu: false
     }
+    this.handleScroll = this.handleScroll.bind(this)
+    window.addEventListener('scroll', this.handleScroll)
   }
-
+  componentWillUnmount(){
+    window.removeEventListener('screen', this.handleScroll)
+  }
   handleCartClose = () => {
     this.setState({showCart:false})
   }
@@ -31,13 +37,27 @@ export default class Main extends React.Component <Props, State> {
     this.setState({showSearch:true})
   }
 
+  handleScroll(){
+    const {fixMenu} = this.state
+    if(!fixMenu && document.documentElement.scrollTop > 200) {
+
+      this.setState({fixMenu:true})
+
+    } else if (fixMenu && document.documentElement.scrollTop <= 200) {
+
+      this.setState({fixMenu:false})
+
+    }
+  }
+
   render(){
-    const {showCart, showSearch} = this.state
+    const {showCart, showSearch, fixMenu} = this.state
     return (
       <div>
         <NavMenu 
           openCart={this.handleCartOpen}
           openSearch={this.handleSearchOpen}
+          fixed={fixMenu}
         />
         <Cart 
           active={showCart}

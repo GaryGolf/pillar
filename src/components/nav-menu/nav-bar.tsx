@@ -3,6 +3,7 @@ import LogoModule from './logo-module'
 import MenuModule from './menu-module'
 
 interface Props {
+  fixed: boolean
   openCart():void
   openSearch():void
 }
@@ -16,8 +17,11 @@ export default (props:Props) => {
     e.preventDefault()
     props.openSearch()
   }
+  const barStyle = props.fixed
+    ? 'nav-bar nav--fixed'
+    : 'nav-bar'
   return (
-    <div className="nav-bar" data-fixed-at="200">
+    <div className={barStyle} data-fixed-at="200">
       <LogoModule/>
       <MenuModule/>
       <div className="nav-module right">

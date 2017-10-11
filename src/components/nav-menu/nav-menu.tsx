@@ -3,6 +3,7 @@ import NavBar from './nav-bar'
 import UtilityBar from './utility-bar'
 
 interface Props {
+	fixed: boolean
 	openCart():void
 	openSearch():void
 }
@@ -30,6 +31,7 @@ export default class NavMenu extends React.Component <Props, State> {
 	  <nav className={navStyle} style={{minHeight: "119px"}}>
 			<UtilityBar/>
 			<NavBar 
+				fixed={this.props.fixed}
 				openCart={this.props.openCart}
 				openSearch={this.props.openSearch}
 			/>
