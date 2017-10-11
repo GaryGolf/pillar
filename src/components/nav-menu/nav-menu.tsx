@@ -4,6 +4,7 @@ import UtilityBar from './utility-bar'
 
 interface Props {
 	openCart():void
+	openSearch():void
 }
 interface State {
 	open: boolean
@@ -28,7 +29,10 @@ export default class NavMenu extends React.Component <Props, State> {
 	return (
 	  <nav className={navStyle} style={{minHeight: "119px"}}>
 			<UtilityBar/>
-			<NavBar openCart={this.props.openCart}/>
+			<NavBar 
+				openCart={this.props.openCart}
+				openSearch={this.props.openSearch}
+			/>
 			<div className="nav-mobile-toggle visible-sm visible-xs"
 				onClick={this.handleNavOpenToggle}>
 				<i className="icon-Align-Right icon icon--sm"></i>

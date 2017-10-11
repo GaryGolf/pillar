@@ -27,6 +27,9 @@ export default class Main extends React.Component <Props, State> {
   handleSearchClose = () => {
     this.setState({showSearch:false})
   }
+  handleSearchOpen = () => {
+    this.setState({showSearch:true})
+  }
 
   render(){
     const {showCart, showSearch} = this.state
@@ -34,6 +37,7 @@ export default class Main extends React.Component <Props, State> {
       <div>
         <NavMenu 
           openCart={this.handleCartOpen}
+          openSearch={this.handleSearchOpen}
         />
         <Cart 
           active={showCart}

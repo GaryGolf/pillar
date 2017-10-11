@@ -4,12 +4,17 @@ import MenuModule from './menu-module'
 
 interface Props {
   openCart():void
+  openSearch():void
 }
 
 export default (props:Props) => {
   const handleCartOpen = e =>{
     e.preventDefault()
     props.openCart()
+  }
+  const handleSearchOpen = e => {
+    e.preventDefault()
+    props.openSearch()
   }
   return (
     <div className="nav-bar" data-fixed-at="200">
@@ -25,7 +30,10 @@ export default (props:Props) => {
         </a>
       </div>
       <div className="nav-module right">
-        <a href="#" className="nav-function modal-trigger" data-modal-id="search-form">
+        <a href="#" 
+          className="nav-function modal-trigger" 
+          data-modal-id="search-form"
+          onClick={handleSearchOpen}>
           <i className="interface-search icon icon--sm"></i>
           <span>Search</span>
         </a>
