@@ -35,8 +35,9 @@ export default (props:Props) => {
             <li>
               <a href="home-business-elegant.html">Elegant</a>
             </li>
-        </ul>
+          </ul>
         </li>
+        <li>
           <ul>
               <li>
                 <span className="multi-column__title">Landing Pages</span>
@@ -66,6 +67,7 @@ export default (props:Props) => {
                 <a href="home-landing-app.html">Application</a>
               </li>
           </ul>
+        </li>
         <li>
           <ul>
             <li>
