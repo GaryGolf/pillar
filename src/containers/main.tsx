@@ -6,13 +6,15 @@ import Search from '../components/search'
 interface Props {}
 interface State {
   showCart: boolean
+  showSearch: boolean
 }
 
 export default class Main extends React.Component <Props, State> {
   constructor(props:Props){
     super(props)
     this.state = {
-      showCart: false
+      showCart: false,
+      showSearch: true
     }
   }
 
@@ -22,9 +24,12 @@ export default class Main extends React.Component <Props, State> {
   handleCartOpen = () => {
     this.setState({showCart:true})
   }
+  handleSearchClose = () => {
+    this.setState({showSearch:false})
+  }
 
   render(){
-    const {showCart} = this.state
+    const {showCart, showSearch} = this.state
     return (
       <div>
         <NavMenu 
@@ -34,7 +39,10 @@ export default class Main extends React.Component <Props, State> {
           active={showCart}
           hide={this.handleCartClose}
         />
-        <Search/>
+        <Search
+          active={showSearch}
+          close={this.handleSearchClose}
+        />
         <SignUp/>
       </div>
     )

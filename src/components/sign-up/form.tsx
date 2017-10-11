@@ -45,7 +45,7 @@ export default (props:Props) => {
                   <input type="checkbox"/>
                 </div>
                   <span className="type--fine-print">I agree to the
-                    <a href="#">terms and conditions</a>
+                    <a href="#"> terms and conditions</a>
                   </span>
                 </div>
             </div>
