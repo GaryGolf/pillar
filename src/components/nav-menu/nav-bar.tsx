@@ -1,16 +1,14 @@
 import * as React from 'react'
+import LogoModule from './logo-module'
+import MenuModule from './menu-module'
 
 interface Props {} {}
 
 export default (props:Props) => {
   return (
     <div className="nav-bar" data-fixed-at="200">
-       <div className="nav-module logo-module left">
-          <a href="index.html">
-            <img className="logo logo-dark" alt="logo" src="img/logo-dark.png"/>
-            <img className="logo logo-light" alt="logo" src="img/logo-light.png"/>
-          </a>
-        </div>
+      <LogoModule/>
+      <MenuModule/>
     </div>
   )
 }
