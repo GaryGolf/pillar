@@ -9,6 +9,9 @@ export default (props:Props) => {
         <Menu.Home/>
         <Menu.Pages/>
         <Menu.Work/>
+        <Menu.Shop/>
+        <Menu.Blog/>
+        <Menu.Elements/>
       </ul>
     </div>
   )
