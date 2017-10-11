@@ -14,7 +14,7 @@ export default class Main extends React.Component <Props, State> {
     super(props)
     this.state = {
       showCart: false,
-      showSearch: true
+      showSearch: false
     }
   }
 
