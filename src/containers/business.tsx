@@ -5,6 +5,7 @@ import About from '../components/business-page/about'
 import NavBar from '../components/business-page/nav-bar'
 import Cart from '../components/cart'
 import Search from '../components/search'
+import Carousel from '../components/business-page/carousel'
 
 interface Props {}
 interface State {
@@ -50,6 +51,7 @@ export default class MainContainer extends React.Component <Props, State> {
         <About.Second/>
         <About.Features/>
         <About.First/>
+        <Carousel/>
         <Footer/>
       </div>
     )
