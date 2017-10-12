@@ -11,7 +11,12 @@ export default class Main extends React.Component <Props, State> {
   render(){
     return (
       <div>
-       <Link to={'/signup'}>Click to load Signup page</Link>
+        <div>
+          <Link to={'/signup'}>Click to load Signup page</Link>
+        </div>
+        <div>
+          <Link to={'/business'}>Busines page</Link>
+        </div>
       </div>
     )
   }
