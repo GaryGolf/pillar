@@ -18,7 +18,7 @@ export default class HomeShopSlider extends React.Component <Props, State> {
 
     this.state = {
       showCart: false,
-      showSearch: false,
+      showSearch: false
     }
   }
 
