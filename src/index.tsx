@@ -6,6 +6,7 @@ import store from './store'
 import Main from './containers/main'
 import Signup from './containers/signup'
 import Business from './containers/business'
+import HomeShopSlider from './containers/home-shop-slider'
 
 ReactDOM.render(
   <Provider store={store} key="provider">
@@ -14,6 +15,7 @@ ReactDOM.render(
         <Route exact path="/" component={Main}/>
         <Route path="/signup" component={Signup}/>
         <Route path="/business" component={Business}/>
+        <Route path="/home-shop-slider" component={HomeShopSlider}/>
       </div>
     </Router>
   </Provider>,document.getElementById('layout'))

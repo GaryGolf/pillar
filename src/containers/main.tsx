@@ -17,6 +17,9 @@ export default class Main extends React.Component <Props, State> {
         <div>
           <Link to={'/business'}>Busines page</Link>
         </div>
+        <div>
+          <Link to={'/home-shop-slider'}>Busines page</Link>
+        </div>
       </div>
     )
   }
