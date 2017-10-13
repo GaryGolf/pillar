@@ -18,7 +18,7 @@ const routes = [
 
 const Router = new UniversalRouter(routes)
 
-Router.resolve({pathname: '/'})
+Router.resolve({pathname: window.location.pathname})
   .then(component=>{
     ReactDOM.render(
       <Provider store={store} key="provider">
