@@ -1,7 +1,12 @@
 import * as React from 'react'
-import { Link } from 'react-router-dom'
 interface Props {}
 interface State {}
+
+const Link = (props) => {
+  return <a href={props.to}>{props.children}</a>
+  
+}
+
 
 export default class Main extends React.Component <Props, State> {
   constructor(props:Props){
@@ -18,7 +23,7 @@ export default class Main extends React.Component <Props, State> {
           <Link to={'/business'}>Busines page</Link>
         </div>
         <div>
-          <Link to={'/home-shop-slider'}>Busines page</Link>
+          <Link to={'/home-shop-slider'}>Home Shop Slider</Link>
         </div>
       </div>
     )
