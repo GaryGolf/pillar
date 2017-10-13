@@ -4,14 +4,30 @@ interface State {
   tab: number
 }
 
-interface TabProps {
+interface TabButtonProps {
+  tab: number
+  title: string
+  active: boolean
+  onClick(tab:number):void
+} 
+
+interface TabContentProps {
   header: string
   text: string
   photo: string
   active: boolean
 }
 
-const Tab = (props:TabProps) => (
+const TabButton = (props:TabButtonProps) => (
+  <li className={props.active?"active":""}>
+    <div className="tab__title btn"
+      onClick={()=>props.onClick(props.tab)}>
+      <span className="btn__text">{props.title}</span>
+    </div>
+  </li>
+)
+
+const TabContent = (props:TabContentProps) => (
   <li className={props.active?"active":""}>
     <div className="tab__content">
       <div className="row pos-vertical-align-columns">
@@ -36,6 +52,8 @@ export default class Features extends React.Component <Props, State> {
     }
   }
 
+  switchTab = tab => this.setState({tab})
+
   render(){
    
     const {tab} = this.state
@@ -46,41 +64,39 @@ export default class Features extends React.Component <Props, State> {
           <div className="row">
             <div className="tabs-container tabs-1">
               <ul className="tabs text-center">
-                <li className={tab==0?"active":""}>
-                  <div className="tab__title btn"
-                    onClick={()=>this.setState({tab:0})}>
-                    <span className="btn__text">Craftsmanship</span>
-                  </div>
-                </li>
-                <li className={tab==1?"active":""}>
-                  <div className="tab__title btn"
-                    onClick={()=>this.setState({tab:1})}>
-                    <span className="btn__text">Sustainability</span>
-                  </div>
-                          
-                </li>
-                <li className={tab==2?"active":""}>
-                  <div className="tab__title btn"
-                    onClick={()=>this.setState({tab:2})}>
-                    <span className="btn__text">Service Guarantee</span>
-                  </div>
-                          
-                </li>
+                <TabButton
+                  tab={0}
+                  title="Craftsmanship"
+                  active={tab==0}
+                  onClick={this.switchTab}
+                />
+                <TabButton
+                  tab={1}
+                  title="Sustainability"
+                  active={tab==1}
+                  onClick={this.switchTab}
+                />
+                <TabButton
+                  tab={2}
+                  title="Service Guarantee"
+                  active={tab==2}
+                  onClick={this.switchTab}
+                />
               </ul>
               <ul className="tabs-content">
-                <Tab
+                <TabContent
                   header="A Commitment To Quality"
                   text="Robust design, sustainable production and honest pricing are the cornerstones of the Pillar vision — Ours values of craftsmanship and authenticity pervade every piece."
                   photo="img/shop-aux-1.jpg"
                   active={tab==0}
                 />
-                <Tab
+                <TabContent
                   header="Responsible Production"
                   text="Pillar combines smart, modern styling with all the features you’ll need to launch websites of almost any kind. Couple it with our exclusive page builder Variant and you’re golden."
                   photo="img/shop-aux-2.jpg"
                   active={tab==1}
                 />
-                <Tab
+                <TabContent
                   header="A Commitment To Quality"
                   text="Pillar combines smart, modern styling with all the features you’ll need to launch websites of almost any kind. Couple it with our exclusive page builder Variant and you’re golden."
                   photo="img/shop-aux-3.jpg"
