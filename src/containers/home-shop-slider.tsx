@@ -51,6 +51,7 @@ export default class HomeShopSlider extends React.Component <Props, State> {
         <Content.Quotation/>
         <Content.Collection/>
         <Content.Features/>
+        <Content.Subscribe/>
         <Footer/>
       </div>
     )
