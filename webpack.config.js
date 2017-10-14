@@ -36,7 +36,7 @@ module.exports = {
       {
         test: /\.tsx?$/,
         include: sourcePath,
-        use: PRODUCTION ? 'ts-loader' : ['react-hot-loader', 'ts-loader']
+        use: PRODUCTION ? 'ts-loader' : ['react-hot-loader/webpack', 'ts-loader']
       },
       // css 
       {
