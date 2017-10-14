@@ -48,6 +48,7 @@ export default class HomeShopSlider extends React.Component <Props, State> {
           active={showSearch}
           close={this.handleSearchClose}
         />
+        <Content.Video/>
         <Content.About/>
         <Content.Portfolio/>
         <Content.Consultation/>
