@@ -1,14 +1,14 @@
-import * as React from 'react'
+import * as React from 'react';
 interface Props {
-  active: boolean
-  hide():void
+  active: boolean;
+  hide(): void;
 }
 
 export default (props:Props) => {
-  if(!props.active) return null
+  if (!props.active) return null;
   const cartStyle = props.active
     ? 'notification pos-right pos-top cart-overview notification--reveal'
-    : 'notification pos-right pos-top cart-overview notification--reveal notification--dismissed'
+    : 'notification pos-right pos-top cart-overview notification--reveal notification--dismissed';
 
   return (
     <div className={cartStyle} data-notification-link="cart-overview" data-animation="from-right">
@@ -54,5 +54,5 @@ export default (props:Props) => {
         onClick={props.hide}
       />
     </div>
-  )
-}
+  );
+};
