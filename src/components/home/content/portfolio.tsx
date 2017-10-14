@@ -12,8 +12,8 @@ export default (props:Props) => {
         </div>
         <div className="row">
           <div className="masonry">
-            <div className="masonry__container masonry--animate masonry--active" style={{position:"relative",height:"1046px"}}>
-              <div className="col-sm-6 masonry__item filter-digital" data-masonry-filter="digital" style={{position:"absolute",left:0,top:0}}>
+            <div className="masonry__container masonry--animate masonry--active">
+              <div className="col-sm-6 masonry__item filter-digital" data-masonry-filter="digital" >
                 <a href="#">
                   <div className="card card-3">
                     <div className="card__image">
@@ -31,7 +31,7 @@ export default (props:Props) => {
                 </a>
               </div>
               {/* <!--end item--> */}
-              <div className="col-sm-6 masonry__item filter-digital" data-masonry-filter="digital" style={{position:"absolute",left:"485px",top:0}}>
+              <div className="col-sm-6 masonry__item filter-digital" data-masonry-filter="digital" >
                 <a href="#">
                   <div className="card card-3">
                     <div className="card__image">
@@ -49,7 +49,7 @@ export default (props:Props) => {
                 </a>
               </div>
               {/* <!--end item--> */}
-              <div className="col-sm-6 masonry__item filter-digital" data-masonry-filter="digital" style={{position:"absolute",left:0,top:"523px"}}>
+              <div className="col-sm-6 masonry__item filter-digital" data-masonry-filter="digital" >
                 <a href="#">
                   <div className="card card-3">
                     <div className="card__image">
@@ -67,7 +67,7 @@ export default (props:Props) => {
                 </a>
               </div>
               {/* <!--end item--> */}
-              <div className="col-sm-6 masonry__item filter-packaging" data-masonry-filter="packaging" style={{position:"absolute",left:"485px",top:"523px"}}>
+              <div className="col-sm-6 masonry__item filter-packaging" data-masonry-filter="packaging" >
                 <a href="#">
                   <div className="card card-3">
                     <div className="card__image">

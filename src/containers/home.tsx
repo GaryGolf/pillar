@@ -36,7 +36,7 @@ export default class HomeShopSlider extends React.Component <Props, State> {
     const {showCart, showSearch} = this.state
 
     return (
-      <div>
+      <div className="main-container transition--fade transition--active">
         <NavBar
           showCart={this.handleCartOpen}
           showSearch={this.handleSearchOpen}
@@ -49,13 +49,11 @@ export default class HomeShopSlider extends React.Component <Props, State> {
           active={showSearch}
           close={this.handleSearchClose}
         />
-        <div className="main-container transition--fade transition--active">
-          <Content.Video/>
-          <Content.About/>
-          <Content.Portfolio/>
-          <Content.Consultation/>
-          <Footer/>           
-        </div>
+        <Content.Video/>
+        <Content.About/>
+        <Content.Portfolio/>
+        <Content.Consultation/>
+        <Footer/>           
       </div>
     );
   };
