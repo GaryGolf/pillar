@@ -1,3 +1,4 @@
-import About from './about'
+import About from './about';
+import Portfolio from './portfolio';
 
-export default {About}
+export default {About, Portfolio};
