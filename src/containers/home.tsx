@@ -50,6 +50,7 @@ export default class HomeShopSlider extends React.Component <Props, State> {
           close={this.handleSearchClose}
         />
         <Content.About/>
+        <Content.Portfolio/>
         <Footer/>
       </div>
     )
