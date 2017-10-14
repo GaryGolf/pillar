@@ -1,10 +1,11 @@
 import * as React from 'react';
 
-import NavBar from '../components/business-page/nav-bar';
+// import NavBar from '../components/business-page/nav-bar';
 import Cart from '../components/cart';
 import Search from '../components/search';
 import Footer from '../components/footer';
 import Content from '../components/home/content';
+import NavBar from '../components/home/nav-bar';
 
 interface Props {};
 interface State {
@@ -35,7 +36,7 @@ export default class HomeShopSlider extends React.Component <Props, State> {
     const {showCart, showSearch} = this.state
 
     return (
-      <div className="main-container transition--fade transition--active">
+      <div>
         <NavBar
           showCart={this.handleCartOpen}
           showSearch={this.handleSearchOpen}
