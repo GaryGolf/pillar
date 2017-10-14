@@ -4,6 +4,7 @@ import MenuModule from './menu-module'
 
 interface Props {
   fixed: boolean
+  transparent?: boolean
   openCart():void
   openSearch():void
 }
@@ -17,9 +18,13 @@ export default (props:Props) => {
     e.preventDefault()
     props.openSearch()
   }
-  const barStyle = props.fixed
-    ? 'nav-bar nav--fixed'
-    : 'nav-bar'
+
+  const barStyle = [
+    'nav-bar',
+    props.fixed ? 'nav--fixed' : '',
+    props.transparent ? 'nav--absolute nav--transparent' : ''
+  ].join(' ')
+
   return (
     <div className={barStyle} data-fixed-at="200">
       <LogoModule/>

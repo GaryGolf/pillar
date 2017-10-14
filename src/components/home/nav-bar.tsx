@@ -7,7 +7,7 @@ interface Props {
 }
 interface State {
   open: boolean
-  fixMenu: boolean
+  fixed: boolean
 }
 
 export default class NavBar extends React.Component <Props, State> {
@@ -16,7 +16,7 @@ export default class NavBar extends React.Component <Props, State> {
     super(props)
     this.state= {
       open:false,
-      fixMenu: false,
+      fixed: false,
     }
     this.handleScroll = this.handleScroll.bind(this)
     window.addEventListener('scroll', this.handleScroll)
@@ -27,14 +27,14 @@ export default class NavBar extends React.Component <Props, State> {
   }
 
   handleScroll(){
-    const {fixMenu} = this.state
-    if(!fixMenu && document.documentElement.scrollTop > 200) {
+    const {fixed} = this.state
+    if(!fixed && document.documentElement.scrollTop > 200) {
 
-      this.setState({fixMenu:true})
+      this.setState({fixed:true})
 
-    } else if (fixMenu && document.documentElement.scrollTop <= 200) {
+    } else if (fixed && document.documentElement.scrollTop <= 200) {
 
-      this.setState({fixMenu:false})
+      this.setState({fixed:false})
 
     }
   }
@@ -43,7 +43,7 @@ export default class NavBar extends React.Component <Props, State> {
 	}
 
   render(){
-    const {open, fixMenu} = this.state
+    const {open, fixed} = this.state
     const {showCart, showSearch} = this.props
 		const navStyle = !open
 			?	"transition--fade transition--active"
@@ -51,16 +51,15 @@ export default class NavBar extends React.Component <Props, State> {
       
     return (
       <nav className={navStyle} style={{minHeight:0}}>
-        <div className="nav-bar nav--absolute nav--transparent" data-fixed-at="200">
-          <Menu
-            fixed={fixMenu}
-            openCart={showCart}
-            openSearch={showSearch}
-          /> 
-          <div className="nav-mobile-toggle visible-sm visible-xs" 
-            onClick={this.handleNavOpenToggle}>
-            <i className="icon-Align-Right icon icon--sm"></i>
-          </div>
+        <Menu
+          fixed={fixed}
+          transparent={!fixed}
+          openCart={showCart}
+          openSearch={showSearch}
+        /> 
+        <div className="nav-mobile-toggle visible-sm visible-xs" 
+          onClick={this.handleNavOpenToggle}>
+          <i className="icon-Align-Right icon icon--sm"></i>
         </div>
       </nav>
     )
