@@ -5,7 +5,7 @@ export default (props:Props) => {
   return (
     <section className="imagebg videobg height-100 video-active" data-overlay="5">
       
-      <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoPlay muted loop>
+      <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsInline autoPlay muted loop>
         <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm"/>
         <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4"/>
       </video>
