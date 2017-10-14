@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
     "build": "rimraf dist && webpack -p --progress --colors",
-    "test": "jest"
+    "test": "jest",
+    "tslint": "tslint -c tslint.json src/**/*.tsx"
   },
   "repository": {
     "type": "git",
@@ -70,6 +71,9 @@
     "style-loader": "^0.18.2",
     "ts-jest": "^21.0.0",
     "ts-loader": "^2.3.7",
+    "tslint": "^5.7.0",
+    "tslint-config-airbnb": "^5.3.0",
+    "tslint-loader": "^3.5.3",
     "typescript": "^2.5.3",
     "url-loader": "^0.5.9",
     "webpack": "^3.7.1",

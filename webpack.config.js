@@ -31,7 +31,7 @@ module.exports = {
       {
         enforce: 'pre',
         test: /\.tsx?$/,
-        use: "source-map-loader"
+        use: ['source-map-loader','tslint-loader']
       },
       {
         test: /\.tsx?$/,
