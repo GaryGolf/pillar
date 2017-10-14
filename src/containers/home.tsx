@@ -5,6 +5,7 @@ import NavBar from '../components/business-page/nav-bar';
 import Cart from '../components/cart';
 import Search from '../components/search';
 import Footer from '../components/footer';
+import Content from '../components/home/content'
 
 interface Props {}
 interface State {
@@ -48,7 +49,7 @@ export default class HomeShopSlider extends React.Component <Props, State> {
           active={showSearch}
           close={this.handleSearchClose}
         />
-       
+        <Content.About/>
         <Footer/>
       </div>
     )
