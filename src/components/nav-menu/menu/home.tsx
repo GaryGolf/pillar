@@ -6,10 +6,10 @@ interface Props {
 
 export default (props:Props) => {
 
-  const activeStyle = props.active ? {className: "active"} : null
+  const activeStyle = props.active ? {className: 'active'} : null
 
-  const toggleMenu = e => {
-    e.preventDefault()
+  const toggleMenu = (event) => {
+    event.preventDefault()
     if(!props.active) props.toggle('home')
     else props.toggle('')
   }

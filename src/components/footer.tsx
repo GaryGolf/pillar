@@ -1,5 +1,5 @@
-import * as React from 'react'
-interface Props {}
+import * as React from 'react';
+interface Props {};
 
 export default (props:Props) => {
   return (
@@ -42,15 +42,27 @@ export default (props:Props) => {
           <div className="col-md-4 col-sm-8">
             <h6>Recent News</h6>
             <div className="twitter-feed">
-              <div className="tweets-feed" data-feed-name="mrareweb" data-amount="2" id="tweets-0"></div>
+              <div className="tweets-feed" data-feed-name="mrareweb" data-amount="2" id="tweets-0"/>
             </div>
           </div>
           <div className="col-md-4 col-md-offset-1 col-sm-12">
             <h6>Subscribe</h6>
             <p>Get monthly updates and free resources.</p>
-            <form className="form--merge form--no-labels form--active" action="http://mrareco.createsend.com/t/d/s/kieth/?callback=?" method="post" id="subForm" data-error="Please fill all fields correctly." data-success="Thanks for signing up! Please check your inbox for confirmation email." noValidate>
+            <form className="form--merge form--no-labels form--active" 
+              action="http://mrareco.createsend.com/t/d/s/kieth/?callback=?" 
+              method="post" 
+              id="subForm" 
+              data-error="Please fill all fields correctly." 
+              data-success="Thanks for signing up! Please check your inbox for confirmation email." 
+              noValidate>
               <br/>
-              <input className="col-md-8 col-sm-6 validate-required validate-email" id="fieldEmail" name="cm-kieth-kieth" type="email" placeholder="Email Address"/>
+              <input 
+                className="col-md-8 col-sm-6 validate-required validate-email" 
+                id="fieldEmail" 
+                name="cm-kieth-kieth" 
+                type="email" 
+                placeholder="Email Address"
+              />
               <button type="submit" className="btn">Go</button>
             </form>
             <h6>Connect with Us</h6>
@@ -109,5 +121,5 @@ export default (props:Props) => {
         {/* <!--end of container--> */}
       </div>
     </footer>
-  )
-}
+  );
+};
