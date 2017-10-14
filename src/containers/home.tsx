@@ -1,17 +1,16 @@
 import * as React from 'react';
 
 import NavBar from '../components/business-page/nav-bar';
-// import Content from '../components/home-shop-slider/content';
 import Cart from '../components/cart';
 import Search from '../components/search';
 import Footer from '../components/footer';
-import Content from '../components/home/content'
+import Content from '../components/home/content';
 
-interface Props {}
+interface Props {};
 interface State {
   showCart: boolean;
   showSearch: boolean;
-}
+};
 
 export default class HomeShopSlider extends React.Component <Props, State> {
   constructor(props:Props){
@@ -20,8 +19,8 @@ export default class HomeShopSlider extends React.Component <Props, State> {
     this.state = {
       showCart: false,
       showSearch: false
-    }
-  }
+    };
+  };
 
   handleCartClose = () => this.setState({showCart:false});
   
@@ -51,8 +50,9 @@ export default class HomeShopSlider extends React.Component <Props, State> {
         />
         <Content.About/>
         <Content.Portfolio/>
+        <Content.Consultation/>
         <Footer/>
       </div>
-    )
-  }
-}
+    );
+  };
+};
