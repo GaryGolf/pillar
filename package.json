@@ -7,7 +7,7 @@
     "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
     "build": "rimraf dist && webpack -p --progress --colors",
     "test": "jest",
-    "tslint": "tslint -c tslint.json src/**/*.tsx"
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'"
   },
   "repository": {
     "type": "git",
@@ -49,10 +49,7 @@
     "@types/redux": "^3.6.0",
     "@types/redux-logger": "^3.0.0",
     "@types/redux-promise": "^0.5.24",
-    "babel-eslint": "^8.0.1",
     "css-loader": "^0.28.4",
-    "eslint": "^4.8.0",
-    "eslint-plugin-react": "^7.4.0",
     "extract-text-webpack-plugin": "^3.0.1",
     "file-loader": "^0.11.2",
     "html-loader": "^0.4.5",
@@ -81,7 +78,6 @@
     "webpack-hot-middleware": "^2.18.1"
   },
   "dependencies": {
-    "ismobilejs": "^0.4.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-owl-carousel": "^2.2.0",
