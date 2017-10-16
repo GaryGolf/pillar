@@ -1,7 +1,7 @@
 import * as React from 'react';
 import BlogPaginator from './blog-cards-paginator';
 import CardTemplate from './blog-card-template';
-const json: BlogCardLarge[] = require('./blog-cards-masonry.json');
+const json: BlogCardLarge[] = require('./blog-cards-data.json');
 
 
 interface Props {}
