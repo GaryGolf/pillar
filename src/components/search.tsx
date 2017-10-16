@@ -2,12 +2,12 @@ import * as React from 'react';
 interface Props {
   active: boolean;
   close():void;
-};
-interface State {};
+}
+interface State {}
 
 export default class Search extends React.Component <Props, State> {
-  render(){
-    const {active} = this.props;
+  render() {
+    const { active } = this.props;
     // if(!active) return null
     const searchStyle = active
       ? 'modal-container search-modal modal-active'
@@ -36,5 +36,5 @@ export default class Search extends React.Component <Props, State> {
         {/* <!--end of modal-content--> */}
       </div>
     );
-  };
-};
+  }
+}
