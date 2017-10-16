@@ -1,5 +1,5 @@
-import * as React from 'react'
-import SocialList from './social-list'
+import * as React from 'react';
+import SocialList from './social-list';
 
 interface Props {}
 
@@ -16,5 +16,5 @@ export default (props:Props) => {
         <SocialList/>
       </div>
     </div>
-  )
-}
+  );
+};
