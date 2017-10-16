@@ -1,5 +1,8 @@
 import * as React from 'react';
 import NavMenu from '../components/nav-menu';
+import Cart from '../components/cart';
+import Search from '../components/search';
+import ShopItemDetails from '../components/shop-product-vanilla/item-detail';
 
 interface Props {}
 interface State {
@@ -26,11 +29,21 @@ export default class ShopProduct extends React.PureComponent <Props, State> {
 
 
   render() {
+    const { showCart, showSearch } = this.state;
     return (
       <div className="main-container transition--fade transition--active">
         <NavMenu
           openCart={this.handleCartOpen}
           openSearch={this.handleSearchOpen}
+        />
+        <ShopItemDetails/>
+        <Cart 
+          active={showCart}
+          hide={this.handleCartClose}
+        />
+        <Search
+          active={showSearch}
+          close={this.handleSearchClose}
         />
       </div>
     );
