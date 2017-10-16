@@ -1,5 +1,7 @@
 import * as React from 'react';
-interface Props {}
+interface Props {
+  onSubmit(quantity:number):void;
+}
 interface State {
   quantity: number;
 }
@@ -12,7 +14,7 @@ export default class ShopForm extends React.PureComponent <Props, State> {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Quantity:', this.state.quantity);
+    this.props.onSubmit(this.state.quantity);
   }
   handleQuantityChange = (event) => {
     const quantity = event.target.value;

@@ -13,7 +13,9 @@ export default (props:Props) => {
               <Slider/>
             </div>
             <div className="col-md-4 col-md-offset-1 col-sm-6">
-              <ShopForm/>
+              <ShopForm
+                onSubmit={console.log}
+              />
             </div>
           </div>
         </div>

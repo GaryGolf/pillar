@@ -1,8 +1,10 @@
 import * as React from 'react';
 import NavMenu from '../components/nav-menu';
+import Footer from '../components/footer';
 import Cart from '../components/cart';
 import Search from '../components/search';
 import ShopItemDetails from '../components/shop-product-vanilla/item-detail';
+import RelatedProducts from '../components/shop-product-vanilla/related-products';
 
 interface Props {}
 interface State {
@@ -36,7 +38,6 @@ export default class ShopProduct extends React.PureComponent <Props, State> {
           openCart={this.handleCartOpen}
           openSearch={this.handleSearchOpen}
         />
-        <ShopItemDetails/>
         <Cart 
           active={showCart}
           hide={this.handleCartClose}
@@ -45,6 +46,9 @@ export default class ShopProduct extends React.PureComponent <Props, State> {
           active={showSearch}
           close={this.handleSearchClose}
         />
+        <ShopItemDetails/>
+        <RelatedProducts/>
+        <Footer/>
       </div>
     );
   }
