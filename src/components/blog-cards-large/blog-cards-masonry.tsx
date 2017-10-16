@@ -5,14 +5,31 @@ const json: BlogCardLarge[] = require('./blog-cards-data.json');
 
 
 interface Props {}
-interface State {}
+interface State {
+  page: number;
+}
 
 export default class Masonry extends React.PureComponent <Props, State> {
+  private cardsPerPage = 4
   constructor(props:Props) {
     super(props);
+    this.state = { page: 1 };
   }
+
+  isCardInThePage(idx:number): boolean {
+    const high = this.state.page * this.cardsPerPage;
+    const low = (this.state.page - 1) * this.cardsPerPage;
+    if ( idx >= low && idx < high) return true;
+    return false;
+  }
+
+  handlePaginatorClick(page) {
+    this.setState({ page });
+  }
+
   render() {
     const cards = json.map((item,idx) => {
+      if (!this.isCardInThePage(idx)) return null;
       return (
         <CardTemplate
           key={idx}
@@ -37,8 +54,8 @@ export default class Masonry extends React.PureComponent <Props, State> {
               </div>
             </div>
             <BlogPaginator
-              pages={3}
-              onClick={console.log}
+              pages={2}
+              onClick={this.handlePaginatorClick}
             />
           </div>
         </div>  
