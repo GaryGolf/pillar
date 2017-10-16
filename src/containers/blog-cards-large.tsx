@@ -4,6 +4,7 @@ import Footer from '../components/footer';
 import Cart from '../components/cart';
 import Search from '../components/search';
 import BlogTitle from '../components/blog-cards-large/blog-cards-title';
+import BlogCards from '../components/blog-cards-large/blog-cards-masonry';
 
 interface Props {}
 interface State {
@@ -46,6 +47,7 @@ export default class ShopProduct extends React.PureComponent <Props, State> {
           close={this.handleSearchClose}
         />
         <BlogTitle/>
+        <BlogCards/>
         <Footer/>
       </div>
     );

@@ -1,10 +1,11 @@
 import * as React from 'react';
+import BlogPaginator from './blog-cards-paginator';
 interface Props {}
 interface State {}
 
 export default class Masonry extends React.PureComponent <Props, State> {
   constructor(props:Props) {
-    super(props)
+    super(props);
   }
   render() {
     return (
@@ -18,26 +19,10 @@ export default class Masonry extends React.PureComponent <Props, State> {
                 
               </div>
             </div>
-            <div className="pagination-container">
-              <hr/>
-              <ul className="pagination">
-                <li>
-                    <a href="#"><span>←</span></a>
-                </li>
-                <li className="active">
-                    <a href="#">1</a>
-                </li>
-                <li>
-                    <a href="#">2</a>
-                </li>
-                <li>
-                    <a href="#">3</a>
-                </li>
-                <li>
-                  <a href="#"><span>→</span></a>
-                </li>
-              </ul>
-            </div>
+            <BlogPaginator
+              pages={3}
+              onClick={console.log}
+            />
           </div>
         </div>  
       </section>
