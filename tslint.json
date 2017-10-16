@@ -4,6 +4,7 @@
     "no-console": false,
     "no-unused-variable": false,
     "no-const-assign": true,
-    "no-use-before-declare": false
+    "no-use-before-declare": false,
+    "import-name": false
  }
 }
