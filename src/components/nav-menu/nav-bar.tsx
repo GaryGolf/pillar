@@ -1,29 +1,29 @@
-import * as React from 'react'
-import LogoModule from './logo-module'
-import MenuModule from './menu-module'
+import * as React from 'react';
+import LogoModule from './logo-module';
+import MenuModule from './menu-module';
 
 interface Props {
-  fixed: boolean
-  transparent?: boolean
-  openCart():void
-  openSearch():void
+  fixed: boolean;
+  transparent?: boolean;
+  openCart(): void;
+  openSearch(): void;
 }
 
 export default (props:Props) => {
-  const handleCartOpen = e =>{
-    e.preventDefault()
-    props.openCart()
-  }
-  const handleSearchOpen = e => {
-    e.preventDefault()
-    props.openSearch()
-  }
+  const handleCartOpen = (event) => {
+    event.preventDefault();
+    props.openCart();
+  };
+  const handleSearchOpen = (event) => {
+    event.preventDefault();
+    props.openSearch();
+  };
 
   const barStyle = [
     'nav-bar',
     props.fixed ? 'nav--fixed' : '',
-    props.transparent ? 'nav--absolute nav--transparent' : ''
-  ].join(' ')
+    props.transparent ? 'nav--absolute nav--transparent' : '',
+  ].join(' ');
 
   return (
     <div className={barStyle} data-fixed-at="200">
@@ -48,5 +48,6 @@ export default (props:Props) => {
         </a>
       </div>
     </div>
-  )
-}
+  );
+};
+

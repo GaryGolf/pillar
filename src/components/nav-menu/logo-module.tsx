@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 interface Props {}
 
 export default (props:Props) => {
@@ -9,5 +9,5 @@ export default (props:Props) => {
         <img className="logo logo-light" alt="logo" src="img/logo-light.png"/>
       </a>
     </div>
-  )
-}
+  );
+};
