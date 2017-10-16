@@ -4,40 +4,70 @@ interface Props {
   onClick(page):void;
 }
 interface State {
-  current: number
+  current: number;
 }
 
 export default class BlogPaginator extends React.PureComponent <Props, State> {
   constructor(props:Props) {
     super(props);
-    this.state= { current: 1 }
+    this.state = { current: 1 };
   }
 
-  handleClick = (event) => {
+  handlePrevPage = (event) => {
     event.preventDefault();
+    this.setState((state:State) => {
+      if (state.current <= 1) return { current: 1 };
+      return { current: state.current - 1 };
+    });
+  }
+
+  handleNextPage = (event) => {
+    event.preventDefault();
+    const { pages } = this.props;
+    this.setState((state:State) => {
+      if (state.current >= pages) return { current: pages };
+      return { current: state.current + 1 };
+    });
   }
 
   render() {
     const { pages, onClick } = this.props;
-    const tab = new Array(pages);
+    const { current } = this.state;
+    const tabs: JSX.Element[] = new Array(pages)
+      .fill(<div/>)
+      .map((item, idx) => {
+        const page = idx + 1;
+        const active = current === page ? 'active' : ''; 
+        return (
+          <li key={idx} className={active}>
+            <a href="#"
+              data-page={page}
+              onClick={(event) => { 
+                event.preventDefault(); 
+                onClick(page);
+                this.setState({ current: page });
+              }}>
+              {page}
+            </a>
+          </li>
+        );
+      });
     return (
       <div className="pagination-container">
         <hr/>
         <ul className="pagination">
           <li>
-              <a href="#"><span>←</span></a>
+              <a href="#"
+                onClick={this.handlePrevPage}>
+                <span>←</span>
+              </a>
           </li>
-          <li className="active">
-              <a href="#">1</a>
-          </li>
+          {tabs}
           <li>
-              <a href="#">2</a>
-          </li>
-          <li>
-              <a href="#">3</a>
-          </li>
-          <li>
-            <a href="#"><span>→</span></a>
+            <a href="#"
+              onClick={this.handleNextPage}>>
+              <span>→</span>
+            </a>
           </li>
         </ul>
     </div>

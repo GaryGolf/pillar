@@ -6,6 +6,7 @@
     "no-const-assign": true,
     "no-use-before-declare": false,
     "import-name": false,
-    "variable-name": ["allow-pascal-case"]
+    "variable-name": ["allow-pascal-case"],
+    "prefer-array-literal": false
  }
 }
