@@ -1,3 +1,3 @@
-import Container from './blog-post-container';
+import BlogPostContainer from './blog-post-container';
 
-export default { Container };
+export default BlogPostContainer;
