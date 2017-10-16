@@ -1,5 +1,5 @@
 import * as React from 'react';
-interface Props {};
+interface Props {}
 
 export default (props:Props) => {
   return (
