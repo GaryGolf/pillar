@@ -3,7 +3,7 @@ import * as React from 'react';
 interface Props {
   active: boolean;
   toggle(name:string): void;
-};
+}
 
 export default (props:Props) => {
   const activeStyle = props.active ? { className: 'active' } : null;
