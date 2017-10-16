@@ -3,19 +3,45 @@ import NavBar from './nav-bar';
 import UtilityBar from './utility-bar';
 
 interface Props {
-  fixed: boolean;
+  //fixed: boolean;
   openCart():void;
   openSearch():void;
 }
 interface State {
   open: boolean;
+  fixed: boolean;
 }
 
 export default class NavMenu extends React.Component <Props, State> {
 
   constructor(props:Props) {
     super(props);
-    this.state = { open:false };
+    this.state = { 
+      open:false,
+      fixed:false,
+    };
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('screen', this.handleScroll);
+  }
+
+  handleScroll(event) {
+    const { fixed } = this.state;
+    if (!fixed && document.documentElement.scrollTop > 200) {
+
+      this.setState({ fixed:true });
+
+    } else if (fixed && document.documentElement.scrollTop <= 200) {
+
+      this.setState({ fixed:false });
+
+    }
   }
 
   handleNavOpenToggle = (event) => {
@@ -23,7 +49,7 @@ export default class NavMenu extends React.Component <Props, State> {
   }
 
   render() {
-    const { open } = this.state;
+    const { open, fixed } = this.state;
     const navStyle = !open
       ?	'transition--fade transition--active'
       : 'transition--fade transition--active nav-open';
@@ -31,7 +57,7 @@ export default class NavMenu extends React.Component <Props, State> {
       <nav className={navStyle} style={{ minHeight:'119px' }}>
         <UtilityBar/>
         <NavBar 
-          fixed={this.props.fixed}
+          fixed={fixed}
           openCart={this.props.openCart}
           openSearch={this.props.openSearch}
         />
