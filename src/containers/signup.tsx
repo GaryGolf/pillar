@@ -25,7 +25,7 @@ export default class Signup extends React.Component <Props, State> {
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
   }
-  componentWillUnmount(){
+  componentWillUnmount() {
     window.removeEventListener('screen', this.handleScroll);
   }
   handleCartClose = () => {
@@ -54,7 +54,7 @@ export default class Signup extends React.Component <Props, State> {
     }
   }
 
-  render(){
+  render() {
     const { showCart, showSearch, fixMenu } = this.state;
     return (
       <div>
