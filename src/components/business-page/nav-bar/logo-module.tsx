@@ -1,7 +1,9 @@
-import * as React from 'react'
+import * as React from 'react';
 interface Props {}
 
 export default (props:Props) => {
+  const url = 'http://themeforest.net/item/pillar-multipurpose-html-with-page-builder' +
+    '/16164427?ref=medium_rare';
   return (
     <div className="row">
       <div className="nav-stack__upper">
@@ -11,11 +13,11 @@ export default (props:Props) => {
           </a>
         </div>
         <div className="col-xs-6 text-right">
-          <a href="http://themeforest.net/item/pillar-multipurpose-html-with-page-builder/16164427?ref=medium_rare" className="btn btn--sm btn--square">
+          <a className="btn btn--sm btn--square"href={url}>
             <span className="btn__text">Purchase Now</span>
           </a>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
