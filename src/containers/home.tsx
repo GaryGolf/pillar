@@ -5,7 +5,7 @@ import Footer from '../components/footer';
 import Content from '../components/home/content';
 import NavBar from '../components/home/nav-bar';
 
-interface Props {};
+interface Props {}
 interface State {
   showCart: boolean;
   showSearch: boolean;
@@ -16,19 +16,19 @@ export default class HomeShopSlider extends React.Component <Props, State> {
     super(props);
     this.state = {
       showCart: false,
-      showSearch: false
+      showSearch: false,
     };
   }
 
   handleCartClose = () => this.setState({ showCart:false });
   
-  handleCartOpen = () => this.setState({ showCart:true })
+  handleCartOpen = () => this.setState({ showCart:true });
   
-  handleSearchClose = () => this.setState({ showSearch:false })
+  handleSearchClose = () => this.setState({ showSearch:false });
   
-  handleSearchOpen = () => this.setState({ showSearch:true })
+  handleSearchOpen = () => this.setState({ showSearch:true });
 
-  render(){
+  render() {
 
     const { showCart, showSearch } = this.state;
 
