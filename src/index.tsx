@@ -10,19 +10,24 @@ import HomeShopSlider from './containers/home-shop-slider';
 import UniversalRouter from 'universal-router';
 
 const routes = [
-  {path: '/', action: () => <Home/> },
-  {path: '/signup', action: () => <Signup/> },
-  {path: '/business', action: () => <Business/> },
-  {path: '/home-shop-slider', action: () => <HomeShopSlider/> }
+  { path: '/', action: () => <Home/> },
+  { path: '/signup', action: () => <Signup/> },
+  { path: '/business', action: () => <Business/> },
+  { path: '/home-shop-slider', action: () => <HomeShopSlider/> },
 
 ];
 
 const Router = new UniversalRouter(routes);
+const pathname = window.location.pathname;
 
-Router.resolve({pathname: window.location.pathname})
-  .then(component=>{
-    ReactDOM.render(
-      <Provider store={store} key="provider">
-      {component}
-      </Provider>,document.getElementById('layout'));
-  });
+function wrap(component) {
+  return <Provider store={store} key="provider">{component}</Provider>;
+}
+
+function render(component) {
+  const container =  document.getElementById('layout');
+  return ReactDOM.render(wrap(component), container);
+}
+
+
+Router.resolve({ pathname }).then(render);
