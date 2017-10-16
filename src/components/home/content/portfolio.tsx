@@ -1,5 +1,5 @@
 import * as React from 'react';
-interface Props {};
+interface Props {}
 
 export default (props:Props) => {
   return (
@@ -13,7 +13,8 @@ export default (props:Props) => {
         <div className="row">
           <div className="masonry">
             <div className="masonry__container masonry--animate masonry--active">
-              <div className="col-sm-6 masonry__item filter-digital" data-masonry-filter="digital" >
+              <div className="col-sm-6 masonry__item filter-digital" 
+                data-masonry-filter="digital" >
                 <a href="#">
                   <div className="card card-3">
                     <div className="card__image">
@@ -31,7 +32,8 @@ export default (props:Props) => {
                 </a>
               </div>
               {/* <!--end item--> */}
-              <div className="col-sm-6 masonry__item filter-digital" data-masonry-filter="digital" >
+              <div className="col-sm-6 masonry__item filter-digital" 
+                data-masonry-filter="digital" >
                 <a href="#">
                   <div className="card card-3">
                     <div className="card__image">
@@ -49,7 +51,8 @@ export default (props:Props) => {
                 </a>
               </div>
               {/* <!--end item--> */}
-              <div className="col-sm-6 masonry__item filter-digital" data-masonry-filter="digital" >
+              <div className="col-sm-6 masonry__item filter-digital" 
+                data-masonry-filter="digital" >
                 <a href="#">
                   <div className="card card-3">
                     <div className="card__image">
@@ -67,7 +70,8 @@ export default (props:Props) => {
                 </a>
               </div>
               {/* <!--end item--> */}
-              <div className="col-sm-6 masonry__item filter-packaging" data-masonry-filter="packaging" >
+              <div className="col-sm-6 masonry__item filter-packaging" 
+                data-masonry-filter="packaging" >
                 <a href="#">
                   <div className="card card-3">
                     <div className="card__image">
