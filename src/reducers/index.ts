@@ -1,8 +1,8 @@
 import { combineReducers, Reducer } from 'redux';
-import {EmptyState, empty} from './empty'
+import {EmptyState, empty} from './empty';
 
 export interface RootState {
-  empty: EmptyState
+  empty: EmptyState;
 }
 
-export default combineReducers<RootState>({ empty })
+export default combineReducers<RootState>({ empty });
