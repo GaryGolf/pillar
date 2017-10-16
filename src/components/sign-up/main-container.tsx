@@ -1,7 +1,7 @@
-import * as React from 'react'
-import Image from './image'
-import Form from './form'
-import Footer from '../footer'
+import * as React from 'react';
+import Image from './image';
+import Form from './form';
+import Footer from '../footer';
 interface Props {}
 
 export default (prop:Props) => {
@@ -13,5 +13,5 @@ export default (prop:Props) => {
       </section>
       <Footer/>
     </div>
-  )
-}
+  );
+};
