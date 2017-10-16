@@ -17,4 +17,3 @@ export function empty(state = initialState, action): EmptyState {
   }
   return state;
 }
- 

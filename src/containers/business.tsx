@@ -31,7 +31,7 @@ export default class MainContainer extends React.Component <Props, State> {
   handleSearchOpen = () => this.setState({ showSearch:true });
   
 
-  render(){
+  render() {
     const { showCart, showSearch } = this.state;
     return (
       <div className="main-container transition--fade transition--active">
