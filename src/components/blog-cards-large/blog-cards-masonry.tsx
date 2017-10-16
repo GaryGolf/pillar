@@ -10,7 +10,7 @@ interface State {
 }
 
 export default class Masonry extends React.PureComponent <Props, State> {
-  private cardsPerPage = 4
+  private cardsPerPage = 4;
   constructor(props:Props) {
     super(props);
     this.state = { page: 1 };
@@ -19,15 +19,15 @@ export default class Masonry extends React.PureComponent <Props, State> {
   isCardInThePage(idx:number): boolean {
     const high = this.state.page * this.cardsPerPage;
     const low = (this.state.page - 1) * this.cardsPerPage;
-    if ( idx >= low && idx < high) return true;
+    if (idx >= low && idx < high) return true;
     return false;
   }
 
-  handlePaginatorClick(page) {
-    this.setState({ page });
-  }
+  handlePaginatorClick = page => this.setState({ page });
+  
 
   render() {
+    const pages = Math.ceil(json.length / this.cardsPerPage);
     const cards = json.map((item,idx) => {
       if (!this.isCardInThePage(idx)) return null;
       return (
@@ -47,14 +47,15 @@ export default class Masonry extends React.PureComponent <Props, State> {
           <div className="row">
             <div className="masonry masonry-blog">
               <div className="masonry__container masonry--animate masonry--active" 
-                style={{ position:'relative', height:'2518.5px' }}>
+                // style={{ position:'relative', height:'2518.5px' }}
+              >
 
                 {cards}
            
               </div>
             </div>
             <BlogPaginator
-              pages={2}
+              pages={pages}
               onClick={this.handlePaginatorClick}
             />
           </div>

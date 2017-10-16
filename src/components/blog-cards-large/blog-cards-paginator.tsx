@@ -17,6 +17,7 @@ export default class BlogPaginator extends React.PureComponent <Props, State> {
     event.preventDefault();
     this.setState((state:State) => {
       if (state.current <= 1) return { current: 1 };
+      this.props.onClick(state.current - 1);
       return { current: state.current - 1 };
     });
   }
@@ -26,6 +27,7 @@ export default class BlogPaginator extends React.PureComponent <Props, State> {
     const { pages } = this.props;
     this.setState((state:State) => {
       if (state.current >= pages) return { current: pages };
+      this.props.onClick(state.current + 1);
       return { current: state.current + 1 };
     });
   }
