@@ -3,6 +3,7 @@ import NavMenu from '../components/nav-menu';
 import Footer from '../components/footer';
 import Cart from '../components/cart';
 import Search from '../components/search';
+import BlogTitle from '../components/blog-cards-large/blog-cards-title'
 
 interface Props {}
 interface State {
@@ -44,6 +45,7 @@ export default class ShopProduct extends React.PureComponent <Props, State> {
           active={showSearch}
           close={this.handleSearchClose}
         />
+        <BlogTitle/>
         <Footer/>
       </div>
     );
