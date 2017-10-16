@@ -1,16 +1,26 @@
 import * as React from 'react';
 interface Props {}
-interface State {}
+interface State {
+  quantity: number;
+}
 
 export default class ShopForm extends React.PureComponent <Props, State> {
   constructor(props:Props) {
     super(props);
+    this.state = { quantity:1 };
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
+    console.log('Quantity:', this.state.quantity);
+  }
+  handleQuantityChange = (event) => {
+    const quantity = event.target.value;
+    if (isNaN(quantity)) return;
+    this.setState({ quantity });
   }
   render() {
+    const { quantity } = this.state;
     return (
       <div>
         <div className="item__title"><h4>Lucas Wrist Watch</h4></div>
@@ -18,8 +28,12 @@ export default class ShopForm extends React.PureComponent <Props, State> {
           <span className="type--strikethrough">$249.00</span>
           <span>$189.00</span>
         </div>
-        <form className="item__addtocart">
-          <input type="text" value="1" name="quantity"/>
+        <form className="item__addtocart" onSubmit={this.handleSubmit}>
+          <input type="text" 
+            name="quantity"
+            value={quantity}
+            onChange={this.handleQuantityChange}
+          />
           <button type="submit" className="btn btn--primary">Add To Cart</button>
         </form>
         <div className="item__description">
