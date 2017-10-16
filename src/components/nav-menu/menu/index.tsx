@@ -5,4 +5,4 @@ import Shop from './shop';
 import Blog from './blog';
 import Elements from './elements';
 
-export default {Home, Pages, Work, Shop, Blog, Elements};
+export default { Home, Pages, Work, Shop, Blog, Elements };
