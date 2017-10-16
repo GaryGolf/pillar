@@ -1,37 +1,41 @@
-import * as React from 'react'
+import * as React from 'react';
 interface Props {}
 interface State {
-  name: string
-  email:  string
-  password: string
-  agree: boolean
+  name: string;
+  email:  string;
+  password: string;
+  agree: boolean;
 }
 
 export default class Form extends React.Component <Props, State > {
-  constructor(props:Props){
-    super(props)
+  constructor(props:Props) {
+    super(props);
     this.state = {
       name: '',
       email: '',
       password: '',
-      agree: false
-    }
+      agree: false,
+    };
   }
-  handleFormSubmit = e => {
-    e.preventDefault()
-    const {name, email, password, agree} = this.state
-    if(!name || !email || !password || !agree) return
-    console.log(this.state)
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    const { name, email, password, agree } = this.state;
+    if (!name || !email || !password || !agree) return;
+    console.log(this.state);
   }
   
-  handleInputChange = event => {
-    const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value
-    const name = event.target.name
-    this.setState({[name]: value})
+  handleInputChange = (event) => {
+    const value = event.target.type === 'checkbox' 
+      ? event.target.checked 
+      : event.target.value;
+    const name = event.target.name;
+    this.setState({ [name]: value });
   }
 
-  render(){
-    const checkboxStyle = !this.state.agree ? 'input-checkbox' : 'input-checkbox checked'
+  render() {
+    const checkboxStyle = !this.state.agree 
+      ? 'input-checkbox' 
+      : 'input-checkbox checked';
     return (
       <div className="col-md-5 col-sm-7 bg--white text-center">
         <div className="pos-vertical-center">
@@ -89,7 +93,7 @@ export default class Form extends React.Component <Props, State > {
                     {/* <div className="inner"/> */}
                     <input type="checkbox"
                       name="agree"
-                      style={{padding:'.3rem'}}
+                      style={{ padding:'.3rem' }}
                       className="inner"
                       checked={this.state.agree}
                       onChange={this.handleInputChange}
@@ -109,6 +113,6 @@ export default class Form extends React.Component <Props, State > {
         </div>
       </div>
     </div>
-    )
+    );
   }
 }
