@@ -3,7 +3,6 @@ import NavBar from './nav-bar';
 import UtilityBar from './utility-bar';
 
 interface Props {
-  //fixed: boolean;
   openCart():void;
   openSearch():void;
 }
