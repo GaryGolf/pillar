@@ -7,6 +7,9 @@
   height: 100%;
   pointer-events: none;
   overflow: hidden;
+  opacity: 1; 
+  transition-property: opacity; 
+  transition-duration: 2000ms;
 }
   @media (min-aspect-ratio: 16/9) {
     .video { height: 300%; top: -100%; }
