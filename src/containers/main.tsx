@@ -21,10 +21,9 @@ const routes = [
   { path: '/blog-cards-large', action: () => <BlogCards/> },
   { path: '/blog-post-image-header', action: () => <BlogPost/> },
 ];
-
 const Router = new UniversalRouter(routes);
-const pathname = window.location.pathname;
+const { pathname } = store.getState().router;
 
 const wrap = component => <Provider store={store} key="provider">{component}</Provider>;
-
-export default Router.resolve({ pathname }).then(wrap);
+const render = pathname => Router.resolve({ pathname }).then(wrap);
+export default render(pathname);
