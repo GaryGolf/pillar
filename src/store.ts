@@ -1,9 +1,15 @@
 import { createStore, applyMiddleware, Store, Middleware } from 'redux';
-import { routerMiddleware } from 'redux-first-routing';
+import { routerMiddleware, createBrowserHistory, startListener } from 'redux-first-routing';
 import { createLogger } from 'redux-logger';
 import reduxThunk from 'redux-thunk';
 import * as ReduxPromise from 'redux-promise';
 import rootReducer, { RootState } from './reducers';
+
+const history = createBrowserHistory();
+const store = configureStore();
+startListener(history, store);
+
+export default store;
 
 function configureStore(initialState?: RootState): Store<RootState> {
 
@@ -23,8 +29,5 @@ function configureStore(initialState?: RootState): Store<RootState> {
       store.replaceReducer(require('./reducers'));
     });
   }
-
   return store;
 }
-
-export default configureStore();
