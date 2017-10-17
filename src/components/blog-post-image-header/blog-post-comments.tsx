@@ -20,7 +20,8 @@ export default (props:Props) => {
                     <em>March 17th, 2016</em>
                   </span>
                   <p>
-                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.
+                    Quis autem vel eum iure reprehenderit qui in ea voluptate 
+                    velit esse quam nihil molestiae consequatur.
                   </p>
                 </div>
                 <hr/>
@@ -38,7 +39,8 @@ export default (props:Props) => {
                         <em>March 17th, 2016</em>
                       </span>
                       <p>
-                        Vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.
+                        Vel eum iure reprehenderit qui in ea voluptate 
+                        velit esse quam nihil molestiae consequatur.
                       </p>
                     </div>
                     <hr/>
@@ -58,7 +60,8 @@ export default (props:Props) => {
                     <em>March 15th, 2016</em>
                   </span>
                   <p>
-                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.
+                    Quis autem vel eum iure reprehenderit qui in ea 
+                    voluptate velit esse quam nihil molestiae consequatur.
                   </p>
                 </div>
                 <hr/>

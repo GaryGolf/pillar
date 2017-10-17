@@ -2,6 +2,7 @@ import * as React from 'react';
 import ImageHeader from './blog-post-image';
 import BlogPostApproach from './blog-post-approach';
 import BlogPostShare from './blog-post-share';
+import BlogPostComments from './blog-post-comments';
 interface Props {}
 interface State {}
 
@@ -17,6 +18,7 @@ export default class BlogPostContainer extends React.PureComponent <Props, State
         <div className="container">
           <BlogPostApproach/>
           <BlogPostShare/>
+          <BlogPostComments/>
         </div>
       </section>
     );

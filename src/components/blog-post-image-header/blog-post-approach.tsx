@@ -17,21 +17,25 @@ export default (props:Props) => {
             Dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum 
             exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi 
             consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse 
-            quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
+            quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo 
+            voluptas nulla pariatur
         </p>
         <blockquote>
-            “User engagement and experience has become a major focus for any web-based service in recent years”
+            “User engagement and experience has become a major focus for any web-based 
+            service in recent years”
         </blockquote>
         <p>
             Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
-            <a href="#">as evidenced</a>, nisi ut aliquid ex ea commodi consequatur? Quis autem 
-            vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
-            vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
+            <a href="#">as evidenced</a>, nisi ut aliquid ex ea commodi consequatur? 
+            Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse 
+            quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo 
+            voluptas nulla pariatur
         </p>
         <h5>So where to from here then?</h5>
         <p>
-            Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae 
-            consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
+            Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse 
+            quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo 
+            voluptas nulla pariatur
         </p>
         <hr/>
       </div>
