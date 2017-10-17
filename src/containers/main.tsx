@@ -25,8 +25,6 @@ const routes = [
 const Router = new UniversalRouter(routes);
 const pathname = window.location.pathname;
 
-function render(component) {
-  return <Provider store={store} key="provider">{component}</Provider>;
-}
+const wrap = component => <Provider store={store} key="provider">{component}</Provider>;
 
-export default Router.resolve({ pathname }).then(render);
+export default Router.resolve({ pathname }).then(wrap);
