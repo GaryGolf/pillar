@@ -1,4 +1,6 @@
 import * as React from 'react';
+import Form from './blog-post-comments-form';
+
 interface Props {}
 
 export default (props:Props) => {
@@ -69,13 +71,7 @@ export default (props:Props) => {
                     {/* <!--end comment--> */}
             </li>
           </ul>
-          <form className="comment__form form--square">
-            <h6>Leave a Comment</h6>
-            <input placeholder="Your Name" type="text" name="name"/>
-            <input placeholder="Email Address" type="email" name="email"/>
-            <textarea placeholder="Your Comment" name="comment" rows={4}></textarea>
-            <button type="submit" className="btn btn--primary">Submit Comment</button>
-          </form>
+          <Form/>
         </div>
       </div>
     </div>
