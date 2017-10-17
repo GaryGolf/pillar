@@ -8,7 +8,7 @@ export default (props:Props) => {
   
   return (
     <li>
-      <a href="/shop-product-vanilla" >Shop</a>
+      <a href="/home-shop-slider">Shop</a>
     </li>
   );
 };
