@@ -14,14 +14,14 @@ export default class BlogPostForm extends React.PureComponent <Props, State> {
       name: '',
       email: '',
       comment: '',
-    }
+    };
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
     const { name, email, comment } = this.state;
-    if(!name || !email || !comment) return
-    console.log(this.state)
+    if (!name || !email || !comment) return;
+    console.log(this.state);
   }
 
   handleChange = (event) => {
