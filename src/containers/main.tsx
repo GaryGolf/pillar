@@ -1,6 +1,6 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import UniversalRouter from 'universal-router';
+import { push, replace } from 'redux-first-routing';
 import { Provider } from 'react-redux';
 import store from '../store';
 
@@ -22,7 +22,13 @@ const routes = [
   { path: '/blog-post-image-header', action: () => <BlogPost/> },
 ];
 const Router = new UniversalRouter(routes);
+
 const { pathname } = store.getState().router;
+
+const unsubscribe = store.subscribe(() => {
+  const { pathname } = store.getState().router;
+  render(pathname);
+});
 
 const wrap = component => <Provider store={store} key="provider">{component}</Provider>;
 const render = pathname => Router.resolve({ pathname }).then(wrap);
