@@ -13,6 +13,7 @@ import HomeShopSlider from './containers/home-shop-slider';
 import ShopProduct from './containers/shop-product-vanilla';
 import BlogCards from './containers/blog-cards-large';
 import BlogPost from './containers/blog-post-image-header';
+import ContactForm from './containers/page-contact-form-simple';
 
 const routes = [
   { path: '', action: () => <Home/> },
@@ -22,6 +23,7 @@ const routes = [
   { path: '/shop-product-vanilla', action: () => <ShopProduct/> },
   { path: '/blog-cards-large', action: () => <BlogCards/> },
   { path: '/blog-post-image-header', action: () => <BlogPost/> },
+  { path: '/page-contact-form-simple', action: () => <ContactForm/> },
 ];
 const Router = new UniversalRouter(routes);
 const unsubscribe = store.subscribe(() => {
