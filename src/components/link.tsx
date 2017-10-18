@@ -40,8 +40,9 @@ export default class Link extends React.Component <Props,State> {
       return;
     }
     event.preventDefault();
-    if (replace) replace(to);
-    else push(to);
+    // if (replace) replace(to);
+    // else push(to);
+    push(to);
   }
 
   render() {

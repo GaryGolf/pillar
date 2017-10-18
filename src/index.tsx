@@ -32,7 +32,7 @@ const container =  document.getElementById('layout');
 const render = pathname => Router.resolve(pathname)
   .then((component:JSX.Element) => {
     const app = <Provider store={store} key="provider">{component}</Provider>;
-    ReactDOM.hydrate(app, container);
+    ReactDOM.render(app, container);
   });
 
 startListener(history, store);
