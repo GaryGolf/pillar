@@ -1,4 +1,6 @@
 import * as React from 'react';
+import Link from '../../common/link';
+
 interface Props {
   active: boolean;
   toggle(name:string): void;
@@ -48,7 +50,7 @@ export default (props:Props) => {
           <a href="#">Contact</a>
           <ul>
             <li>
-              <a href="page-contact-form-simple.html">Contact Simple</a>
+              <Link to="page-contact-form-simple">Contact Simple</Link>
             </li>
             <li>
               <a href="page-contact-map-api.html">Contact Map API</a>
