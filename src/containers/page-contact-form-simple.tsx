@@ -50,6 +50,7 @@ export default class ContactForm extends React.Component <Props, State> {
         />
         <PageContact.Image/>
         <PageContact.Features/>
+        <PageContact.Form/>
         <Footer/>           
       </div>
     );
