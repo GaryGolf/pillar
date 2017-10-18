@@ -32,7 +32,7 @@ export default (props:Props) => {
               <a href="home-business-corporate.html">Corporate</a>
             </li>
             <li>
-              <Link to="home-business-startup.html">Startup</Link>
+              <Link to="home-business-startup">Startup</Link>
             </li>
             <li>
               <a href="home-business-startup-2.html">Startup 2</a>

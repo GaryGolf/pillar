@@ -46,9 +46,9 @@ export default class Link extends React.Component <Props,State> {
   }
 
   render() {
-    const { to, children } = this.props;
+    const { to, children, className } = this.props;
     return (
-      <a href={to} onClick={this.handleClick}>
+      <a href={to} onClick={this.handleClick} className={className}>
         {children}
       </a>
     );
