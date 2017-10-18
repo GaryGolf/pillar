@@ -7,7 +7,6 @@ export default (prop:Props) => {
     background: 'url(img/hero7.jpg)', 
     opacity: 1,
     top: 0, 
-    //height: '790px',
   };
   return (
     <section className="height-100 imagebg cover cover-4 parallax" 
