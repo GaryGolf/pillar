@@ -12,7 +12,7 @@ export default class HomeBusinessStartupLove extends React.Component <Props, Sta
     };
   }
 
-  handleTabToggle = tab => this.setState(state => ({ tab }))
+  handleTabToggle = tab => this.setState(state => ({ tab }));
   
 
   render() {
