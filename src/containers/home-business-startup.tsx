@@ -48,6 +48,7 @@ export default class ContactForm extends React.Component <Props, State> {
           close={this.handleSearchClose}
         />
         <HomeBusinesStartup.Image/>
+        <HomeBusinesStartup.Title/>
         <Footer/>           
       </div>
     );
