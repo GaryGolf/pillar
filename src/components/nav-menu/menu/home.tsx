@@ -1,4 +1,6 @@
 import * as React from 'react';
+import Link from '../../common/link';
+
 interface Props {
   active: boolean;
   toggle(name:string): void;
@@ -30,7 +32,7 @@ export default (props:Props) => {
               <a href="home-business-corporate.html">Corporate</a>
             </li>
             <li>
-              <a href="home-business-startup.html">Startup</a>
+              <Link to="home-business-startup.html">Startup</Link>
             </li>
             <li>
               <a href="home-business-startup-2.html">Startup 2</a>
