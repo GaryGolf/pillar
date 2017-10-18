@@ -23,7 +23,7 @@ export default class NavBar extends React.Component <Props, State> {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('screen', this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
   handleScroll() {
