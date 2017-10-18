@@ -51,6 +51,7 @@ export default class ContactForm extends React.Component <Props, State> {
         <HomeBusinesStartup.Title/>
         <HomeBusinesStartup.Features/>
         <HomeBusinesStartup.Why/>
+        <HomeBusinesStartup.Love/>
         <Footer/>           
       </div>
     );
