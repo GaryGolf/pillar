@@ -4,6 +4,8 @@ import Search from '../components/search';
 import Footer from '../components/footer';
 import NavBar from '../components/home/nav-bar';
 
+import PageContact from '../components/page-contact-form-simple';
+
 
 interface Props {}
 interface State {
@@ -46,6 +48,8 @@ export default class ContactForm extends React.Component <Props, State> {
           active={showSearch}
           close={this.handleSearchClose}
         />
+        <PageContact.Image/>
+        <PageContact.Features/>
         <Footer/>           
       </div>
     );
