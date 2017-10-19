@@ -2,8 +2,8 @@ import * as React from 'react';
 import Menu from '../nav-menu/nav-bar';
 
 interface Props {
-  showCart(): void;
-  showSearch(): void;
+  showCart?(): void;
+  showSearch?(): void;
 }
 interface State {
   open: boolean;

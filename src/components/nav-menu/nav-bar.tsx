@@ -5,10 +5,13 @@ import * as Actions from '../../constants/actions';
 const { connect } = require('react-redux');
 
 interface Props {
-  fixed: boolean;
+  fixed?: boolean;
   transparent?: boolean;
   showCart?(payload:boolean):void;
   showSearch?(payload:boolean):void;
+}
+interface State {
+  fixed: boolean;
 }
 
 @connect(
@@ -18,7 +21,36 @@ interface Props {
     showSearch: payload => dispatch({ payload, type: Actions.SHOW_SEARCH }),
   }),
 )
-export default class NavBar extends React.Component <Props, null> {
+export default class NavBar extends React.Component <Props, State> {
+
+  constructor(props:Props) {
+    super(props);
+    this.state = {
+      fixed: false,
+    };
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(event) {
+    const { fixed } = this.state;
+    if (!fixed && document.documentElement.scrollTop > 200) {
+
+      this.setState({ fixed:true });
+
+    } else if (fixed && document.documentElement.scrollTop <= 200) {
+
+      this.setState({ fixed:false });
+
+    }
+  }
   
   handleCartOpen = (event) => {
     event.preventDefault();
@@ -32,9 +64,8 @@ export default class NavBar extends React.Component <Props, null> {
 
   render() {
 
-
-    const { fixed, transparent } = this.props;
-  
+    const { fixed } = this.state;
+    const { transparent } = this.props;
     const barStyle = [
       'nav-bar',
       fixed ? 'nav--fixed' : '',

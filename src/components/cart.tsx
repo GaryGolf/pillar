@@ -4,7 +4,7 @@ const { connect } = require('react-redux');
 
 interface Props {
   active?: boolean;
-  hide(): void;
+  hide?(): void;
 }
 interface State {}
 

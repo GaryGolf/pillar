@@ -3,8 +3,8 @@ import NavBar from './nav-bar';
 import UtilityBar from './utility-bar';
 
 interface Props {
-  openCart():void;
-  openSearch():void;
+  openCart?():void;
+  openSearch?():void;
 }
 interface State {
   open: boolean;

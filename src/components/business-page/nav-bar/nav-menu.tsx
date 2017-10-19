@@ -2,8 +2,8 @@ import * as React from 'react';
 import Logo from './logo-module';
 import NavBar from '../../nav-menu/nav-bar';
 interface Props {
-  showCart():void;
-  showSearch():void;
+  showCart?():void;
+  showSearch?():void;
 }
 interface State {
   open: boolean;
