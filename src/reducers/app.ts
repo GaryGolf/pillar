@@ -1,4 +1,10 @@
 import * as Actions from '../constants/actions';
+
+interface Action {
+  type: string;
+  payload?: any;
+}
+
 /*
 declare interface ICartItem {
   id: string;
@@ -37,10 +43,12 @@ const initialState = {
   showSlideOutCart: false,  
 };
 
-export function app(state = initialState, action): AppState {
+export function app(state = initialState, action: Action): AppState {
   
   switch (action.type) {
-    case Actions.DO_NOTHING:
+    case Actions.SHOW_SLIDE_OUT_CART :
+      if(!action.payload) return { ...state, showSlideOutCart: false };
+      return { ...state, showSlideOutCart: true }
     default :
   }
   return state;
