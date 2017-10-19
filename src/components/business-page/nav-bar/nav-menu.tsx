@@ -60,8 +60,6 @@ export default class NavMenu extends React.Component <Props, State> {
             <div className="col-sm-12">
               <NavBar
                 fixed={fixMenu}
-                openCart={showCart}
-                openSearch={showSearch}
               />
               <div className="nav-mobile-toggle visible-sm visible-xs" 
                 onClick={this.handleNavOpenToggle}>

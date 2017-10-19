@@ -54,8 +54,6 @@ export default class NavBar extends React.Component <Props, State> {
         <Menu
           fixed={fixed}
           transparent={!fixed}
-          openCart={showCart}
-          openSearch={showSearch}
         /> 
         <div className="nav-mobile-toggle visible-sm visible-xs" 
           onClick={this.handleNavOpenToggle}>

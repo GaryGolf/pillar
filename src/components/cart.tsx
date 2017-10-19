@@ -14,7 +14,7 @@ interface State {}
   }),
   dispatch => ({
     hide: () => dispatch({ type: Actions.SHOW_SLIDE_OUT_CART, payload: false }),
-  })
+  }),
 )
 export default class SlideOutCrt extends React.Component <Props,State> {
   render() {

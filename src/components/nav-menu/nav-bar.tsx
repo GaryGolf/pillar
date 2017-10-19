@@ -1,53 +1,69 @@
 import * as React from 'react';
 import LogoModule from './logo-module';
 import MenuModule from './menu-module';
+import * as Actions from '../../constants/actions';
+const { connect } = require('react-redux');
 
 interface Props {
   fixed: boolean;
   transparent?: boolean;
-  openCart(): void;
-  openSearch(): void;
+  showCart?(payload:boolean):void;
+  showSearch?(payload:boolean):void;
 }
 
-export default (props:Props) => {
-  const handleCartOpen = (event) => {
+@connect(
+  store => ({}),
+  dispatch => ({
+    showCart: payload => dispatch({ payload, type: Actions.SHOW_SLIDE_OUT_CART }),
+    showSearch: payload => dispatch({ payload, type: Actions.SHOW_SEARCH }),
+  }),
+)
+export default class NavBar extends React.Component <Props, null> {
+  
+  handleCartOpen = (event) => {
     event.preventDefault();
-    props.openCart();
-  };
-  const handleSearchOpen = (event) => {
+    this.props.showCart(true);
+  }
+
+  handleSearchOpen = (event) => {
     event.preventDefault();
-    props.openSearch();
-  };
+    this.props.showSearch(true);
+  }
 
-  const barStyle = [
-    'nav-bar',
-    props.fixed ? 'nav--fixed' : '',
-    props.transparent ? 'nav--absolute nav--transparent' : '',
-  ].join(' ');
+  render() {
 
-  return (
-    <div className={barStyle} data-fixed-at="200">
-      <LogoModule/>
-      <MenuModule/>
-      <div className="nav-module right">
-        <a href="#" 
-          className="nav-function" 
-          data-notification-link="cart-overview"
-          onClick={handleCartOpen}>
-          <i className="interface-bag icon icon--sm"></i>
-          <span>Cart</span>
-        </a>
+
+    const { fixed, transparent } = this.props;
+  
+    const barStyle = [
+      'nav-bar',
+      fixed ? 'nav--fixed' : '',
+      transparent ? 'nav--absolute nav--transparent' : '',
+    ].join(' ');
+  
+    return (
+      <div className={barStyle} data-fixed-at="200">
+        <LogoModule/>
+        <MenuModule/>
+        <div className="nav-module right">
+          <a href="#" 
+            className="nav-function" 
+            data-notification-link="cart-overview"
+            onClick={this.handleCartOpen}>
+            <i className="interface-bag icon icon--sm"></i>
+            <span>Cart</span>
+          </a>
+        </div>
+        <div className="nav-module right">
+          <a href="#" 
+            className="nav-function modal-trigger" 
+            data-modal-id="search-form"
+            onClick={this.handleSearchOpen}>
+            <i className="interface-search icon icon--sm"></i>
+            <span>Search</span>
+          </a>
+        </div>
       </div>
-      <div className="nav-module right">
-        <a href="#" 
-          className="nav-function modal-trigger" 
-          data-modal-id="search-form"
-          onClick={handleSearchOpen}>
-          <i className="interface-search icon icon--sm"></i>
-          <span>Search</span>
-        </a>
-      </div>
-    </div>
-  );
-};
-
+    );
+  }
+}

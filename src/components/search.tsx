@@ -13,7 +13,7 @@ interface State {}
   }),
   dispatch => ({
     close: () => dispatch({ type: Actions.SHOW_SEARCH, payload: false }),
-  })
+  }),
 )
 export default class Search extends React.Component <Props, State> {
   render() {

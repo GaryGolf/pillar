@@ -49,14 +49,14 @@ export function app(state = initialState, action: Action): AppState {
 
     // Slide out cart
     case Actions.SHOW_SLIDE_OUT_CART :
-      if(!action.payload) return { ...state, showSlideOutCart: false };
+      if (!action.payload) return { ...state, showSlideOutCart: false };
       return { ...state, showSlideOutCart: true };
     
     // Search
     case Actions.SHOW_SEARCH :
       if (!action.payload) return { ...state, showSearch: false };
       return { ...state, showSearch: true };
-      
+
     default :
   }
   return state;

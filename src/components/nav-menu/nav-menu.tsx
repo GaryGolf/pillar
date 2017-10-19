@@ -57,8 +57,6 @@ export default class NavMenu extends React.Component <Props, State> {
         <UtilityBar/>
         <NavBar 
           fixed={fixed}
-          openCart={this.props.openCart}
-          openSearch={this.props.openSearch}
         />
         <div className="nav-mobile-toggle visible-sm visible-xs"
           onClick={this.handleNavOpenToggle}>
