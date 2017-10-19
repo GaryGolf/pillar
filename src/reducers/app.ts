@@ -92,6 +92,8 @@ export function app(state = initialState, action: Action): AppState {
       return { ...state, showSlideOutCart: false };
 
     case ActionTypes.ADD_ITEM_TO_CART : {
+      if (state.cart.items.some(item => item.id === action.payload.id))
+        return state; // already exist
       const items = [...state.cart.items];
       items.push({ ...action.payload, quantity: 1 });
       const subtotal = items.reduce((acc, item) => acc + item.quantity * item.price,0);
