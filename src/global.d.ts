@@ -58,6 +58,6 @@ declare interface ICart {
 declare type AppState = {
    cart: ICart;
    showSearch: boolean;
-   showSlideUpCart: boolean;
    mainNavMenu: INavMenu;
+   showSlideOutCart: boolean;
 }
