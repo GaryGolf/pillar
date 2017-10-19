@@ -1,10 +1,10 @@
 import { combineReducers, Reducer } from 'redux';
 import { routerReducer as router } from 'redux-first-routing';
-import { EmptyState, empty } from './empty';
+import { app } from './app';
 
 export interface RootState {
   router: any;
-  empty: EmptyState;
+  app: AppState;
 }
 
-export default combineReducers<RootState>({ router, empty });
+export default combineReducers<RootState>({ router, app });

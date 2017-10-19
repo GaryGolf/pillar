@@ -1,30 +1,13 @@
 import * as React from 'react';
 import { push } from 'redux-first-routing';
 import * as Actions from '../../constants/actions';
-import { EmptyState } from '../../reducers/empty';
 
-const { connect } = require('react-redux');
-
-interface Props {
-  empty?: EmptyState;
-  doNothing?(): void;
-}
+interface Props {}
 interface State {
   name: string;
   email: string;
   comment: string;
 }
-@connect(
-  state => ({
-    empty: state.empty as EmptyState,
-  }),
-  dispatch => ({ 
-    doNothing: async () => { 
-      await dispatch({ type: Actions.DO_NOTHING });
-      await dispatch(push('/'));
-    },
-  }),
-)
 export default class BlogPostForm extends React.PureComponent <Props, State> {
   constructor(props:Props) {
     super(props);
@@ -40,7 +23,6 @@ export default class BlogPostForm extends React.PureComponent <Props, State> {
     const { name, email, comment } = this.state;
     if (!name || !email || !comment) return;
     console.log(this.state);
-    this.props.doNothing();
   }
 
   handleChange = (event) => {
@@ -51,7 +33,6 @@ export default class BlogPostForm extends React.PureComponent <Props, State> {
 
   render() {
     const { name, email, comment } = this.state;
-    console.log(this.props.empty);
     return (
       <form className="comment__form form--square" onSubmit={this.handleSubmit}>
         <h6>Leave a Comment</h6>
