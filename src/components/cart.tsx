@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { hideCart } from '../actions/app';
+import { hideCart, removeCartItem } from '../actions/app';
+import { money } from '../helpers/utils';
 const { connect } = require('react-redux');
 
 interface Props {
@@ -33,9 +34,11 @@ export default class SlideOutCrt extends React.Component <Props,State> {
         </div>
         <div className="item__detail">
           <span>{item.name}</span>
-            <span className="h6">{item.quantity} x {item.price}</span>
+            <span className="h6">{item.quantity} x {money(item.price)}</span>
           </div>
-          <div className="item__remove" title="Remove From Cart"></div>
+          <div className="item__remove" title="Remove From Cart"
+            onClick={() => removeCartItem(item.id)}
+          />
       </li>
     ));
   
@@ -45,7 +48,7 @@ export default class SlideOutCrt extends React.Component <Props,State> {
           <h5>Your Cart</h5>
         </div>
         <ul className="cart-overview__items">{cartItems}</ul>
-        
+
         <div className="cart-overview__subtotal">
           <h5>Subtotal:</h5>
           <span>$128.00</span>

@@ -84,13 +84,19 @@ export function app(state = initialState, action: Action): AppState {
   
   switch (action.type) {
 
-    // Slide out cart
+    // Cart
     case ActionTypes.SHOW_CART :
       return { ...state, showSlideOutCart: true };
     
     case ActionTypes.HIDE_CART :
       return { ...state, showSlideOutCart: false };
     
+    case ActionTypes.REMOVE_CART_ITEM : {
+      const items = state.cart.items.filter(item => item.id !== action.payload);
+      const cart = { ...state.cart, items };
+      return { ...state, cart };
+    }
+
     // Search
     case ActionTypes.SHOW_SEARCH :
       return { ...state, showSearch: true };
