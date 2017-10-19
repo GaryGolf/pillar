@@ -1,14 +1,23 @@
 import * as React from 'react';
+const { connect } = require('react-redux');
+import * as Actions from '../constants/actions';
+
 interface Props {
-  active: boolean;
-  close():void;
+  active?: boolean;
+  close?():void;
 }
 interface State {}
-
+@connect(
+  store => ({
+    active: store.app.showSearch as boolean,
+  }),
+  dispatch => ({
+    close: () => dispatch({ type: Actions.SHOW_SEARCH, payload: false }),
+  })
+)
 export default class Search extends React.Component <Props, State> {
   render() {
-    const { active } = this.props;
-    // if(!active) return null
+    const { active, close } = this.props;
     const searchStyle = active
       ? 'modal-container search-modal modal-active'
       : 'modal-container search-modal';
@@ -30,10 +39,9 @@ export default class Search extends React.Component <Props, State> {
           </div>
           <div className="modal-close modal-close-cross"
             style={{ color:'white' }}
-            onClick={this.props.close}
+            onClick={close}
           />
         </div>
-        {/* <!--end of modal-content--> */}
       </div>
     );
   }
