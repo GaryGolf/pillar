@@ -59,5 +59,5 @@ declare type AppState = {
    cart: ICart;
    showSearch: boolean;
    showSlideUpCart: boolean;
-   navMenus: Array<INavMenu>;
+   mainNavMenu: INavMenu;
 }
