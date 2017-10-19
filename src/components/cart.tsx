@@ -1,10 +1,9 @@
 import * as React from 'react';
-import * as Actions from '../constants/actions';
+import { hideCart } from '../actions/app';
 const { connect } = require('react-redux');
 
 interface Props {
   active?: boolean;
-  hide?(): void;
 }
 interface State {}
 
@@ -12,13 +11,10 @@ interface State {}
   store => ({
     active: store.app.showSlideOutCart as boolean,
   }),
-  dispatch => ({
-    hide: () => dispatch({ type: Actions.SHOW_SLIDE_OUT_CART, payload: false }),
-  }),
 )
 export default class SlideOutCrt extends React.Component <Props,State> {
   render() {
-    const { active, hide } = this.props;
+    const { active } = this.props;
 
     if (!active) return null;
     const cartStyle = active
@@ -66,7 +62,7 @@ export default class SlideOutCrt extends React.Component <Props,State> {
           </a>
         </div>
         <div className="notification-close-cross notification-close"
-          onClick={hide}
+          onClick={hideCart}
         />
       </div>
     );

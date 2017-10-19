@@ -1,4 +1,4 @@
-import * as Actions from '../constants/actions';
+import * as ActionTypes from '../actions/types';
 
 interface Action {
   type: string;
@@ -48,14 +48,18 @@ export function app(state = initialState, action: Action): AppState {
   switch (action.type) {
 
     // Slide out cart
-    case Actions.SHOW_SLIDE_OUT_CART :
-      if (!action.payload) return { ...state, showSlideOutCart: false };
+    case ActionTypes.SHOW_CART :
       return { ...state, showSlideOutCart: true };
     
+    case ActionTypes.HIDE_CART :
+      return { ...state, showSlideOutCart: false };
+    
     // Search
-    case Actions.SHOW_SEARCH :
-      if (!action.payload) return { ...state, showSearch: false };
+    case ActionTypes.SHOW_SEARCH :
       return { ...state, showSearch: true };
+    
+    case ActionTypes.HIDE_SEARCH :
+      return { ...state, showSearch: false };
 
     default :
   }

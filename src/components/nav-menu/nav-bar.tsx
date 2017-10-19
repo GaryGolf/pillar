@@ -1,26 +1,15 @@
 import * as React from 'react';
 import LogoModule from './logo-module';
 import MenuModule from './menu-module';
-import * as Actions from '../../constants/actions';
-const { connect } = require('react-redux');
+import { showCart, showSearch } from '../../actions/app';
 
 interface Props {
-  fixed?: boolean;
   transparent?: boolean;
-  showCart?(payload:boolean):void;
-  showSearch?(payload:boolean):void;
 }
 interface State {
   fixed: boolean;
 }
 
-@connect(
-  store => ({}),
-  dispatch => ({
-    showCart: payload => dispatch({ payload, type: Actions.SHOW_SLIDE_OUT_CART }),
-    showSearch: payload => dispatch({ payload, type: Actions.SHOW_SEARCH }),
-  }),
-)
 export default class NavBar extends React.Component <Props, State> {
 
   constructor(props:Props) {
@@ -54,12 +43,12 @@ export default class NavBar extends React.Component <Props, State> {
   
   handleCartOpen = (event) => {
     event.preventDefault();
-    this.props.showCart(true);
+    showCart();
   }
 
   handleSearchOpen = (event) => {
     event.preventDefault();
-    this.props.showSearch(true);
+    showSearch();
   }
 
   render() {
