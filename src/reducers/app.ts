@@ -93,7 +93,8 @@ export function app(state = initialState, action: Action): AppState {
     
     case ActionTypes.REMOVE_CART_ITEM : {
       const items = state.cart.items.filter(item => item.id !== action.payload);
-      const cart = { ...state.cart, items };
+      const subtotal = items.reduce((acc, item) => acc + item.quantity * item.price,0);
+      const cart = { ...state.cart, items, subtotal };
       return { ...state, cart };
     }
 

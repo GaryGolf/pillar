@@ -41,7 +41,7 @@ export default class SlideOutCrt extends React.Component <Props,State> {
           />
       </li>
     ));
-  
+
     return (
       <div className={cartStyle} data-notification-link="cart-overview" data-animation="from-right">
         <div className="cart-overview__title">
@@ -51,7 +51,7 @@ export default class SlideOutCrt extends React.Component <Props,State> {
 
         <div className="cart-overview__subtotal">
           <h5>Subtotal:</h5>
-          <span>$128.00</span>
+          <span>{money(cart.subtotal)}</span>
         </div>
         <div className="cart-overview__action">
           <a href="#" className="btn btn--square btn--primary">
