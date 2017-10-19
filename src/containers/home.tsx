@@ -2,8 +2,7 @@ import * as React from 'react';
 import Cart from '../components/cart';
 import Search from '../components/search';
 import Footer from '../components/footer';
-import Content from '../components/home/content';
-import NavBar from '../components/home/nav-bar';
+import Content from '../components/home';
 import NavMenu from '../components/nav-menu';
 
 interface Props {}
