@@ -36,8 +36,45 @@ declare type AppState = {
 }
 */
 
+const cartItems: ICartItem[] = [
+  {
+    id: '1',
+    name: 'Dave Wool Beanie',
+    price: 39,
+    quantity: 1,
+    productId: 'SCU2452345',
+    totalDiscount: 0,
+    productVariantId: '',
+    featuredImage: {
+      src: 'img/product-small-1.png',
+    },
+  },
+  {
+    id: '2',
+    name: 'Rose Tinted Glasses',
+    price: 89,
+    quantity: 1,
+    productId: 'SCU24523455',
+    totalDiscount: 0,
+    productVariantId: '',
+    featuredImage: {
+      src: 'img/product-small-2.png',
+    },
+  },
+];
+
+const initialCart: ICart = {
+  total: 128,
+  subtotal: 128,
+  totalTax: 22,
+  totalDiscount: 0,
+  currency: 'USD',
+  items: cartItems,
+};
+
+
 const initialState = {
-  cart: null,
+  cart: initialCart,
   showSearch: false,
   mainNavMenu: null,
   showSlideOutCart: false,  
