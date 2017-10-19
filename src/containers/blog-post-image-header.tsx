@@ -2,7 +2,7 @@ import * as React from 'react';
 import Cart from '../components/cart';
 import Search from '../components/search';
 import Footer from '../components/footer';
-import NavBar from '../components/home/nav-bar';
+import NavMenu from '../components/nav-menu';
 import BlogPostContainer from '../components/blog-post-image-header';
 
 interface Props {}
@@ -17,7 +17,7 @@ export default class HomeShopSlider extends React.Component <Props, State> {
 
     return (
       <div className="main-container transition--fade transition--active">
-        <NavBar />
+        <NavMenu noUtilityBar transparent/>
         <Cart />
         <Search />
         <BlogPostContainer/>

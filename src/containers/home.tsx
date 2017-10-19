@@ -4,48 +4,24 @@ import Search from '../components/search';
 import Footer from '../components/footer';
 import Content from '../components/home/content';
 import NavBar from '../components/home/nav-bar';
+import NavMenu from '../components/nav-menu';
 
 interface Props {}
-interface State {
-  showCart: boolean;
-  showSearch: boolean;
-}
+interface State {}
 
 export default class HomeShopSlider extends React.Component <Props, State> {
   constructor(props:Props) {
     super(props);
-    this.state = {
-      showCart: false,
-      showSearch: false,
-    };
   }
-
-  handleCartClose = () => this.setState({ showCart:false });
-  
-  handleCartOpen = () => this.setState({ showCart:true });
-  
-  handleSearchClose = () => this.setState({ showSearch:false });
-  
-  handleSearchOpen = () => this.setState({ showSearch:true });
 
   render() {
 
-    const { showCart, showSearch } = this.state;
-
     return (
       <div className="main-container transition--fade transition--active">
-        <NavBar
-          showCart={this.handleCartOpen}
-          showSearch={this.handleSearchOpen}
-        />
-        <Cart 
-          active={showCart}
-          hide={this.handleCartClose}
-        />
-        <Search
-          active={showSearch}
-          close={this.handleSearchClose}
-        />
+        {/* <NavBar /> */}
+        <NavMenu transparent noUtilityBar />
+        <Cart />
+        <Search />
         <Content.Video/>
         <Content.About/>
         <Content.Portfolio/>
