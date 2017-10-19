@@ -90,6 +90,14 @@ export function app(state = initialState, action: Action): AppState {
     
     case ActionTypes.HIDE_CART :
       return { ...state, showSlideOutCart: false };
+
+    case ActionTypes.ADD_ITEM_TO_CART : {
+      const items = [...state.cart.items];
+      items.push({ ...action.payload, quantity: 1 });
+      const subtotal = items.reduce((acc, item) => acc + item.quantity * item.price,0);
+      const cart = { ...state.cart, items, subtotal };
+      return { ...state, cart };
+    }
     
     case ActionTypes.REMOVE_CART_ITEM : {
       const items = state.cart.items.filter(item => item.id !== action.payload);

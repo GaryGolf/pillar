@@ -12,6 +12,11 @@ export function hideCart():void {
   store.dispatch({ type });
 }
 
+export function addItemToCart(payload):void {
+  const type = Actions.ADD_ITEM_TO_CART;
+  store.dispatch({ type, payload });
+}
+
 export function removeCartItem(id:string):void {
   const type = Actions.REMOVE_CART_ITEM;
   store.dispatch({ type, payload: id });

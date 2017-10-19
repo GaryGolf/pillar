@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { addItemToCart } from '../../../actions/app';
 import { money } from '../../../helpers/utils';
 const json: CollectionItem[] = require('../../../api/collection.json');
 
@@ -25,7 +26,8 @@ export default (props:Props) => {
       // filter-${item.filter}`}
       // data-masonry-filter={item.filter}
     >
-      <a href="#">
+      <a href="#"
+        onClick={(e) => {e.preventDefault(); addItemToCart(item);}}>
         <div className="shop-item shop-item-1">
           <div className="shop-item__price hover--reveal">
             {
