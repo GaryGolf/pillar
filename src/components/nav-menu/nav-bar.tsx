@@ -1,7 +1,6 @@
 import * as React from 'react';
 import LogoModule from './logo-module';
-// import MenuModule from './menu-module';
-import MenuModule from './json-menu-module';
+import MenuModule from './menu-module';
 import { showCart, showSearch } from '../../actions/app';
 
 interface Props {

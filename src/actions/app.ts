@@ -32,3 +32,10 @@ export function hideSearch(): void {
   const type = Actions.HIDE_SEARCH;
   store.dispatch({ type });
 }
+
+// Menu
+export function setActiveMenu(label:string): void {
+  const type = Actions.SET_ACTIVE_MENU;
+  const payload = label;
+  store.dispatch({ type, payload });
+}

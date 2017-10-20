@@ -120,6 +120,13 @@ export function app(state = initialState, action: Action): AppState {
     case ActionTypes.HIDE_SEARCH :
       return { ...state, showSearch: false };
 
+    // Menu
+    case ActionTypes.SET_ACTIVE_MENU : {
+      const active = action.payload;
+      const mainNavMenu = { ...state.mainNavMenu, active };
+      return { ...state, mainNavMenu };
+    }
+
     default :
   }
   return state;

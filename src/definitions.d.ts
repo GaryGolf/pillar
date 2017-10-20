@@ -14,6 +14,7 @@ declare interface  IMenuItem {
 
 declare interface INavMenu {
   name: 'Main' | 'Footer';
+  active: string; // label of active menu item
   items: IMenuItem[];
 }
 
