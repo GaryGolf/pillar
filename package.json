@@ -80,6 +80,7 @@
     "webpack-hot-middleware": "^2.18.1"
   },
   "dependencies": {
+    "nuka-carousel": "^3.0.0",
     "qs": "^6.5.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
