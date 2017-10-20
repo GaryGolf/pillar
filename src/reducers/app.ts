@@ -92,10 +92,14 @@ export function app(state = initialState, action: Action): AppState {
       return { ...state, showSlideOutCart: false };
 
     case ActionTypes.ADD_ITEM_TO_CART : {
-      if (state.cart.items.some(item => item.id === action.payload.id))
-        return state; // already exist
+      const product = action.payload;
       const items = [...state.cart.items];
-      items.push({ ...action.payload, quantity: 1 });
+      const exist = items.find(item => item.id === product.id);
+      if (exist) {
+        exist.quantity += 1;
+      } else {
+        items.push({ ...product, quantity: 1 });
+      }
       const subtotal = items.reduce((acc, item) => acc + item.quantity * item.price,0);
       const cart = { ...state.cart, items, subtotal };
       return { ...state, cart };
