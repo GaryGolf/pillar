@@ -9,7 +9,7 @@ declare interface BlogCardLarge {
 declare interface  IMenuItem {
   label:  string;
   url?: string;
-  children?: IMenuItem;
+  children?: IMenuItem[];
 }
 
 declare interface INavMenu {
