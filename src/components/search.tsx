@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { hideSearch } from '../actions/app';
+import Actions from '../actions';
 const { connect } = require('react-redux');
 
 interface Props {
@@ -14,6 +14,7 @@ interface State {}
 export default class Search extends React.Component <Props, State> {
   render() {
     const { active } = this.props;
+    const { hideSearch } = Actions.app;
     const searchStyle = active
       ? 'modal-container search-modal modal-active'
       : 'modal-container search-modal';

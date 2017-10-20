@@ -1,3 +1,5 @@
-import * as app from './app';
+import * as types from './types';
+import app from './app';
+import router from './router';
 
-export default { app };
+export default { types, app, router };

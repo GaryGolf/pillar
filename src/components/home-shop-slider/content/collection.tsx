@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { addItemToCart } from '../../../actions/app';
+import Actions from '../../../actions';
 import { money } from '../../../helpers/utils';
 const json: CollectionItem[] = require('../../../api/collection.json');
 
@@ -20,6 +20,7 @@ interface CollectionItem {
 
 export default (props:Props) => {
 
+  const { addItemToCart } = Actions.app;
   const shop = json.map(item => (
     <div key={item.name} 
       className={`col-md-4 col-sm-6 masonry__item`}

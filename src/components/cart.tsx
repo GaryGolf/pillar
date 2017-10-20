@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { hideCart, removeCartItem } from '../actions/app';
+import Actions from '../actions';
 import { money } from '../helpers/utils';
 const { connect } = require('react-redux');
 
@@ -18,7 +18,7 @@ interface State {}
 export default class SlideOutCrt extends React.Component <Props,State> {
   render() {
     const { active, cart } = this.props;
-
+    const { hideCart, removeCartItem } = Actions.app;
     if (!active || !cart) return null;
     const cartStyle = active
       ? 'notification pos-right pos-top cart-overview notification--reveal'

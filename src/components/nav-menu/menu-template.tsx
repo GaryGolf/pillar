@@ -1,7 +1,6 @@
 import * as React from 'react';
 import ChildMenu from './menu-childern-template';
-import { push } from '../../actions/router';
-import { setActiveMenu } from '../../actions/app';
+import Actions from '../../actions';
 
 interface Props {
   active: boolean;
@@ -12,8 +11,8 @@ export default (props:Props) => {
   
   const toggle = (event) => {
     event.preventDefault();
-    if (!props.menu.children) push(props.menu.url);
-    else setActiveMenu(props.active ? '' : props.menu.label);
+    if (!props.menu.children) Actions.router.push(props.menu.url);
+    else Actions.app.setActiveMenu(props.active ? '' : props.menu.label);
   };
 
   return (

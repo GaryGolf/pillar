@@ -1,7 +1,7 @@
 import * as React from 'react';
 import LogoModule from './logo-module';
 import MenuModule from './menu-module';
-import { showCart, showSearch } from '../../actions/app';
+import Actions from '../../actions/app';
 
 interface Props {
   transparent?: boolean;
@@ -43,18 +43,19 @@ export default class NavBar extends React.Component <Props, State> {
   
   handleCartOpen = (event) => {
     event.preventDefault();
-    showCart();
+    Actions.showCart();
   }
 
   handleSearchOpen = (event) => {
     event.preventDefault();
-    showSearch();
+    Actions.showSearch();
   }
 
   render() {
 
     const { fixed } = this.state;
     const { transparent } = this.props;
+
     const barStyle = [
       'nav-bar',
       fixed ? 'nav--fixed' : '',
