@@ -1,0 +1,59 @@
+{
+  "name": "Main",
+  "items": [
+    {
+      "label": "Home",
+      "children": [
+        {
+          "label": "Classic"
+        },
+        {
+          "label": "Corporate"
+        },
+        {
+          "label": "Startup",
+          "url": "/home-buziness-startup"
+        }
+      ]
+    },
+    {
+      "label": "Pages",
+      "children": [
+        {
+          "label": "Contact Form",
+          "url": "/page-contact-form-simple"
+        },
+        {
+          "label": "About Company"
+        },
+        {
+          "label": "About Process"
+        }
+      ]
+    },
+    {
+      "label": "Work",
+      "children": [
+        {
+          "label": "Portfolio"
+        }
+      ]
+    },
+    {
+      "label": "Shop",
+      "url": "/home-shop-slider"
+    },
+    {
+      "label": "Blog",
+      "url": "/shop-product-vanilla"
+    },
+    {
+      "label": "Elements",
+      "children": [
+        {
+          "label": "Pricing Options"
+        }
+      ]
+    }
+  ]
+}

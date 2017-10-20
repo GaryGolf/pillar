@@ -1,4 +1,5 @@
 import * as ActionTypes from '../actions/types';
+const jsonMenu:INavMenu = require('../api/menu.json');
 
 interface Action {
   type: string;
@@ -66,7 +67,7 @@ const cartItems: ICartItem[] = [
 const initialCart: ICart = {
   total: 128,
   subtotal: 128,
-  totalTax: 22,
+  totalTax: 0,
   totalDiscount: 0,
   currency: 'USD',
   items: cartItems,
@@ -76,7 +77,7 @@ const initialCart: ICart = {
 const initialState = {
   cart: initialCart,
   showSearch: false,
-  mainNavMenu: null,
+  mainNavMenu: jsonMenu,
   showSlideOutCart: false,  
 };
 
