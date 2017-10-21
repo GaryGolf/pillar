@@ -35,7 +35,7 @@ export default class ShopProduct extends React.PureComponent <Props, State> {
         <Cart />
         <Search />
         <ShopItemDetails product={product}/>
-        <RelatedProducts/>
+        <RelatedProducts id={product.id} collection={collection}/>
         <Footer/>
       </div>
     );
