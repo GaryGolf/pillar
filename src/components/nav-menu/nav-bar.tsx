@@ -18,9 +18,6 @@ export default class NavBar extends React.Component <Props, State> {
       fixed: false,
     };
     this.handleScroll = this.handleScroll.bind(this);
-  }
-
-  componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
   }
 

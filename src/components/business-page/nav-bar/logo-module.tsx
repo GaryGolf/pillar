@@ -1,4 +1,6 @@
 import * as React from 'react';
+import Link from 'components/common/link';
+
 interface Props {}
 
 export default (props:Props) => {
@@ -8,9 +10,9 @@ export default (props:Props) => {
     <div className="row">
       <div className="nav-stack__upper">
         <div className="col-xs-6">
-          <a href="index.html">
+          <Link to="/">
             <img alt="logo" className="logo" src="img/logo-large-dark.png"/>
-          </a>
+          </Link>
         </div>
         <div className="col-xs-6 text-right">
           <a className="btn btn--sm btn--square"href={url}>
