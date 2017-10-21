@@ -9,7 +9,7 @@ export default (props:Props) => {
   return (
     <div className="col-md-7 col-sm-5">
       <div className="background-image-holder" style={style}>
-        <img alt="image" src="img/hero24.jpg"/>
+        <img alt="image" src="/img/hero24.jpg"/>
       </div>
     </div>
   );

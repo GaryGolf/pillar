@@ -18,7 +18,7 @@ export default (props:Props) => {
                 <a href="#">
                   <div className="card card-3">
                     <div className="card__image">
-                      <img alt="Pic" src="img/work18.jpg"/>
+                      <img alt="Pic" src="/img/work18.jpg"/>
                     </div>
                     <div className="card__body boxed bg--white">
                       <div className="card__title">
@@ -37,7 +37,7 @@ export default (props:Props) => {
                 <a href="#">
                   <div className="card card-3">
                     <div className="card__image">
-                      <img alt="Pic" src="img/work12.jpg"/>
+                      <img alt="Pic" src="/img/work12.jpg"/>
                     </div>
                     <div className="card__body boxed bg--white">
                       <div className="card__title">
@@ -56,7 +56,7 @@ export default (props:Props) => {
                 <a href="#">
                   <div className="card card-3">
                     <div className="card__image">
-                      <img alt="Pic" src="img/work14.jpg"/>
+                      <img alt="Pic" src="/img/work14.jpg"/>
                     </div>
                     <div className="card__body boxed bg--white">
                       <div className="card__title">
@@ -75,7 +75,7 @@ export default (props:Props) => {
                 <a href="#">
                   <div className="card card-3">
                     <div className="card__image">
-                      <img alt="Pic" src="img/work5.jpg"/>
+                      <img alt="Pic" src="/img/work5.jpg"/>
                     </div>
                     <div className="card__body boxed bg--white">
                       <div className="card__title">

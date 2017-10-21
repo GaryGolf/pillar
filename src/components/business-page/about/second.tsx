@@ -23,7 +23,7 @@ export default class Second extends React.Component <Props, State> {
         <div className="imageblock__content col-md-6 col-sm-4 pos-left">
           <div className="background-image-holder" 
             style={{ background: 'url(img/hero28.jpg)', opacity:1 }}>
-            <img alt="image" src="img/hero28.jpg"/>
+            <img alt="image" src="/img/hero28.jpg"/>
           </div>
         </div>
         <div className="container">

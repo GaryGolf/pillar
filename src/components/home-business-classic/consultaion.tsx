@@ -6,7 +6,7 @@ export default (props:Props) => {
     <section className="imagebg section--even" data-overlay="8">
       <div className="background-image-holder" 
         style={{ background:'url(img/hero11.jpg)',opacity:1 }}>
-        <img alt="image" src="img/hero11.jpg"/>
+        <img alt="image" src="/img/hero11.jpg"/>
       </div>
       <div className="container">
         <div className="row">

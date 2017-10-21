@@ -11,7 +11,7 @@ export default (props:Props) => {
       <div className="nav-stack__upper">
         <div className="col-xs-6">
           <Link to="/">
-            <img alt="logo" className="logo" src="img/logo-large-dark.png"/>
+            <img alt="logo" className="logo" src="/img/logo-large-dark.png"/>
           </Link>
         </div>
         <div className="col-xs-6 text-right">

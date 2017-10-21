@@ -43,7 +43,7 @@ export default class HomeBusinessStartupLove extends React.Component <Props, Sta
                   <li className={tab ? '' : 'active'}>
                     <div className="tab__content testimonial-5">
                       <div className="testimonial text-center">
-                        <img alt="avatar" src="img/avatar-large-1.png"/>
+                        <img alt="avatar" src="/img/avatar-large-1.png"/>
                         <hr/>
                         <h5>— Lucas Greenberg, Designer</h5>
                         <blockquote>
@@ -58,7 +58,7 @@ export default class HomeBusinessStartupLove extends React.Component <Props, Sta
                   <li className={tab ? 'active' : ''}>
                     <div className="tab__content testimonial-5">
                       <div className="testimonial text-center">
-                        <img alt="avatar" src="img/avatar-large-3.png"/>
+                        <img alt="avatar" src="/img/avatar-large-3.png"/>
                         <hr/>
                         <h5>— Danni Gibson, Front-end Developer</h5>
                         <blockquote>

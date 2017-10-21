@@ -14,7 +14,7 @@ export default (props:Props) => {
             <li>
               <div className="comment">
                 <div className="comment__image">
-                  <img alt="pic" src="img/avatar-small-4.png"/>
+                  <img alt="pic" src="/img/avatar-small-4.png"/>
                 </div>
                 <div className="comment__text">
                   <h5>Abigail Roswell</h5>
@@ -33,7 +33,7 @@ export default (props:Props) => {
                 <li>
                   <div className="comment">
                     <div className="comment__image">
-                      <img alt="pic" src="img/avatar-small-3.png"/>
+                      <img alt="pic" src="/img/avatar-small-3.png"/>
                     </div>
                     <div className="comment__text">
                       <h5>Rick Vogel</h5>
@@ -54,7 +54,7 @@ export default (props:Props) => {
             <li>
               <div className="comment">
                 <div className="comment__image">
-                  <img alt="pic" src="img/avatar-small-1.png"/>
+                  <img alt="pic" src="/img/avatar-small-1.png"/>
                 </div>
                 <div className="comment__text">
                   <h5>Lisa Wright</h5>

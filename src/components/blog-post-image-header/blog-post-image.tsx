@@ -11,7 +11,7 @@ export default (props:Props) => {
   return (
     <div className="blog-post__title imagebg parallax" data-overlay="5">
       <div className="background-image-holder" style={imageStyle}>
-        <img alt="Pic" src="img/hero25.jpg"/>
+        <img alt="Pic" src="/img/hero25.jpg"/>
       </div>
       <div className="container">
         <div className="row">

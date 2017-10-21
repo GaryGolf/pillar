@@ -39,7 +39,7 @@ export default class Form extends React.Component <Props, State > {
     return (
       <div className="col-md-5 col-sm-7 bg--white text-center">
         <div className="pos-vertical-center">
-          <img className="logo" alt="Pillar" src="img/logo-large-dark.png"/>
+          <img className="logo" alt="Pillar" src="/img/logo-large-dark.png"/>
           <p className="lead">
               A beautiful collection of <br/> hand-crafted web components
           </p>

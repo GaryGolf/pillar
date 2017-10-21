@@ -7,7 +7,7 @@ export default (props:Props) => {
       <div className="imageblock__content col-md-5 col-sm-3 pos-left">
         <div className="background-image-holder" 
           style={{ background:'url(img/hero8.jpg)', opacity:1 }}>
-          <img alt="image" src="img/hero8.jpg"/>
+          <img alt="image" src="/img/hero8.jpg"/>
         </div>
       </div>
       <div className="container">

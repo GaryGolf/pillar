@@ -12,7 +12,7 @@ export default (props:Props) => {
     <section className="height-70 bg--dark imagebg page-title page-title--animate parallax" 
       data-overlay="6">
       <div className="background-image-holder" style={imageHolderStyle}>
-        <img alt="image" src="img/hero16.jpg"/>
+        <img alt="image" src="/img/hero16.jpg"/>
       </div>
       <div className="container pos-vertical-center">
         <div className="row">

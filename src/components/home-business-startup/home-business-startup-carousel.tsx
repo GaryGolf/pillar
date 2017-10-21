@@ -18,16 +18,16 @@ export default (props:Props) => {
   
             >
               <div>
-                <img alt="img" src="img/hero1.jpg"/>
+                <img alt="img" src="/img/hero1.jpg"/>
               </div>
               <div>
-                <img alt="img" src="img/hero1.jpg"/>
+                <img alt="img" src="/img/hero1.jpg"/>
               </div>
               <div>
-                <img alt="img" src="img/hero3.jpg"/>
+                <img alt="img" src="/img/hero3.jpg"/>
               </div>
               <div>
-                <img alt="img" src="img/hero4.jpg"/>
+                <img alt="img" src="/img/hero4.jpg"/>
               </div>
             </Carousel>
      {/* </div>  */}

@@ -49,7 +49,7 @@ export default (props:Props) => {
 
       <div className="background-image-holder" 
         style={{ background:'url(img/hero27.jpg)', opacity:1 }}>
-        <img alt="image" src="img/hero27.jpg"/>
+        <img alt="image" src="/img/hero27.jpg"/>
       </div>
       <div className="container pos-vertical-center">
         <div className="row">

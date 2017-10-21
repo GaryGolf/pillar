@@ -32,7 +32,7 @@ export default class Subscribe extends React.Component <Props, State> {
       <section className="subscribe subscribe-1 space--sm imagebg" data-overlay="3">
         <div className="background-image-holder" 
           style={{ background:'url(img/header4.jpg)',opacity:1 }}>
-          <img alt="image" src="img/header4.jpg"/>
+          <img alt="image" src="/img/header4.jpg"/>
         </div>
         <div className="container">
           <div className="row">

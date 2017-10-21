@@ -10,7 +10,7 @@ export default (props:Props) => {
     <section className="features features-7 imagebg height-80 parallax" data-overlay="5">
       <div className="background-image-holder" 
         style={imageHandleStyle}>
-        <img alt="image" src="img/hero10.jpg"/>
+        <img alt="image" src="/img/hero10.jpg"/>
       </div>
       <div className="container">
         <div className="row">

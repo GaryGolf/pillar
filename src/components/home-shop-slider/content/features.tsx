@@ -93,19 +93,19 @@ export default class Features extends React.Component <Props, State> {
                 <TabContent
                   header="A Commitment To Quality"
                   text={text1}
-                  photo="img/shop-aux-1.jpg"
+                  photo="/img/shop-aux-1.jpg"
                   active={tab === 0}
                 />
                 <TabContent
                   header="Responsible Production"
                   text={text2}
-                  photo="img/shop-aux-2.jpg"
+                  photo="/img/shop-aux-2.jpg"
                   active={tab === 1}
                 />
                 <TabContent
                   header="A Commitment To Quality"
                   text={text3}
-                  photo="img/shop-aux-3.jpg"
+                  photo="/img/shop-aux-3.jpg"
                   active={tab === 2}
                 />
               </ul>

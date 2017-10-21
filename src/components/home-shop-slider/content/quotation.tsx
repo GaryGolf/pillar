@@ -13,7 +13,7 @@ export default (props:Props) => {
               cornerstones of the Pillar vision — Ours values of craftsmanship and 
               authenticity pervade every piece.
             </p>
-            <img className="signature" alt="signature" src="img/signature.png"/>
+            <img className="signature" alt="signature" src="/img/signature.png"/>
           </div>
         </div>
       </div>
