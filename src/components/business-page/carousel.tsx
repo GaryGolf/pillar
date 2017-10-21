@@ -1,5 +1,5 @@
 import * as React from 'react';
-import OwlCarousel from 'react-owl-carousel';
+// import OwlCarousel from 'react-owl-carousel';
 
 interface Props {}
 
@@ -20,7 +20,7 @@ export default (props:Props) => {
     <section className="bg--white partners-1 space--sm">
       <div className="container">
         <div className="col-sm-12">
-          <OwlCarousel 
+          {/* <OwlCarousel 
             className="owl-theme slider"
             autoplayTimeout={2000} 
             dots={false}
@@ -28,7 +28,7 @@ export default (props:Props) => {
             autoWidth loop autoplay center
           >
             {partners}
-          </OwlCarousel>
+          </OwlCarousel> */}
         </div>
       </div>
   </section>
