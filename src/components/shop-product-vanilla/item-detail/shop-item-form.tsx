@@ -1,4 +1,5 @@
 import * as React from 'react';
+import SocialList from 'components/nav-menu/social-list';
 import { money } from 'helpers/utils';
 
 interface Props {
@@ -76,20 +77,7 @@ export default class ShopForm extends React.PureComponent <Props, State> {
         {information}
         <div className="item__description">
           <hr/>
-          <ul className="social-list">
-            <li>
-              <a href="#"><i className="socicon-twitter"/></a>
-            </li>
-            <li>
-              <a href="#"><i className="socicon-facebook"/></a>
-            </li>
-            <li>
-              <a href="#"><i className="socicon-pinterest"/></a>
-            </li>
-            <li>
-              <a href="#"><i className="socicon-stumbleupon"/></a>
-            </li>
-          </ul>
+          <SocialList/>
         </div>
       </div>
     );
