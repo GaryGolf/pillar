@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Image from './image';
-import Form from './form';
+import Image from './page-signup-image';
+import Form from './page-signup-form';
 import Footer from '../footer';
 interface Props {}
 

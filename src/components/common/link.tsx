@@ -4,9 +4,10 @@ const { connect } = require('react-redux');
 
 interface Props {
   to: string;
+  replace?: boolean;
   router?: any;
   push?(to:string): void;
-  replace?(to:string): void;
+  redirect?(to:string): void;
   children?: any;
   className?: string;
 }
@@ -17,7 +18,7 @@ interface State {}
   }),
   dispatch => ({
     push: to => dispatch(push(to)),
-    replace: to => dispatch(replace(to)),
+    redirect: to => dispatch(replace(to)),
   }),
 )
 export default class Link extends React.Component <Props,State> {
@@ -28,7 +29,7 @@ export default class Link extends React.Component <Props,State> {
 
   handleClick = (event) => {
 
-    const { to, push, replace } = this.props;
+    const { to, push, replace, redirect } = this.props;
 
     // Ignore any click other than a left click
     if ((event.button && event.button !== 0)
@@ -40,9 +41,8 @@ export default class Link extends React.Component <Props,State> {
       return;
     }
     event.preventDefault();
-    // if (replace) replace(to);
-    // else push(to);
-    push(to);
+    if (replace) redirect(to);
+    else push(to);
   }
 
   render() {

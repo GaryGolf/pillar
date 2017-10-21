@@ -56,25 +56,27 @@ declare interface ICart {
    items: Array<ICartItem>;
 }
 
+declare interface ISocial {
+  FacebookURL?: string;
+  InstagramURL?: string;
+  YouTubeURL?: string;
+  TwitterURL?: string;
+  LinkedInURL?: string;
+  FlickrURL?: string;
+  TripAdvisorURL?: string;
+  VimeoURL?: string;
+  GooglePlusURL?: string;
+  PinterestURL?: string;
+}
+
 declare interface AppConfig {
-   ecommerce: {
-      currencyCode: CurrencyCode;
-   };
-   social?: null | {
-      FacebookURL?: string;
-      InstagramURL?: string;
-      YouTubeURL?: string;
-      TwitterURL?: string;
-      LinkedInURL?: string;
-      FlickrURL?: string;
-      TripAdvisorURL?: string;
-      VimeoURL?: string;
-      GooglePlusURL?: string;
-      PinterestURL?: string;
-   };
-   theme: {
-      primaryColor: string;
-   };
+  ecommerce: {
+    currencyCode: CurrencyCode;
+  };
+  social?: ISocial | null;
+  theme: {
+    primaryColor: string;
+  };
 }
 
 declare type AppState = {

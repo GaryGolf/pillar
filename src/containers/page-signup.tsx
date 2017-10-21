@@ -1,6 +1,6 @@
 import * as React from 'react';
 import NavMenu from 'components/nav-menu';
-import SignUp from 'components/page-signup/main-container';
+import SignUp from 'components/page-signup';
 import Cart from 'components/cart';
 import Search from 'components/search';
 
