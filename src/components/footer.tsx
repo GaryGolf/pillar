@@ -1,4 +1,6 @@
 import * as React from 'react';
+import SocialList from 'components/nav-menu/social-list';
+
 interface Props {}
 
 export default (props:Props) => {
@@ -66,38 +68,7 @@ export default (props:Props) => {
               <button type="submit" className="btn">Go</button>
             </form>
             <h6>Connect with Us</h6>
-            <ul className="social-list">
-              <li>
-                <a href="#">
-                  <i className="socicon-twitter"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="socicon-dribbble"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="socicon-vimeo"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="socicon-instagram"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="socicon-spotify"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="socicon-behance"></i>
-                </a>
-              </li>
-            </ul>
+            <SocialList/>
           </div>
         </div>
         {/* <!--end of row--> */}
