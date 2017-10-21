@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Cart from '../components/cart';
-import Search from '../components/search';
-import Footer from '../components/footer';
-import Content from '../components/home';
-import NavMenu from '../components/nav-menu';
+import Cart from 'components/cart';
+import Search from 'components/search';
+import Footer from 'components/footer';
+import Content from 'components/home-business-classic';
+import NavMenu from 'components/nav-menu';
 
 interface Props {}
 interface State {}
@@ -17,7 +17,6 @@ export default class HomeShopSlider extends React.Component <Props, State> {
 
     return (
       <div className="main-container transition--fade transition--active">
-        {/* <NavBar /> */}
         <NavMenu transparent noUtilityBar />
         <Cart />
         <Search />

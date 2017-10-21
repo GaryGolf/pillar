@@ -6,15 +6,15 @@ import { Provider } from 'react-redux';
 import store from './store';
 import history from './history';
 
-import Home from './containers/home';
-import Signup from './containers/signup';
-import Business from './containers/business';
-import HomeShopSlider from './containers/home-shop-slider';
-import ShopProduct from './containers/shop-product-vanilla';
-import BlogCards from './containers/blog-cards-large';
-import BlogPost from './containers/blog-post-image-header';
-import ContactForm from './containers/page-contact-form-simple';
-import HomeBusinessStartup from './containers/home-business-startup';
+import Home from 'containers/home-business-classic';
+import Signup from 'containers/page-signup';
+import Business from 'containers/business';
+import HomeShopSlider from 'containers/home-shop-slider';
+import ShopProduct from 'containers/shop-product-vanilla';
+import BlogCards from 'containers/blog-cards-large';
+import BlogPost from 'containers/blog-post-image-header';
+import ContactForm from 'containers/page-contact-form-simple';
+import HomeBusinessStartup from 'containers/home-business-startup';
 
 const routes = [
   { path: '', action: () => <Home/> },
