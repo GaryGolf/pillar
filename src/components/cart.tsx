@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Actions from '../actions';
-import { money } from '../helpers/utils';
+import Actions from 'actions';
+import { money } from 'helpers/utils';
 const { connect } = require('react-redux');
 
 interface Props {

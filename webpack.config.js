@@ -21,6 +21,7 @@ module.exports = {
   devtool: !PRODUCTION ? 'source-map' : false,
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
+    modules: ['node_modules', sourcePath]
     // Fix webpack's default behavior to not load packages with jsnext:main module
     // https://github.com/Microsoft/TypeScript/issues/11677 
    // mainFields: ['main']
@@ -31,17 +32,20 @@ module.exports = {
       {
         enforce: 'pre',
         test: /\.tsx?$/,
+        exclude: /node_modules/,
         use: ['source-map-loader','tslint-loader']
       },
       {
         test: /\.tsx?$/,
         include: sourcePath,
+        exclude: /node_modules/,
         use: PRODUCTION ? 'ts-loader' : ['react-hot-loader/webpack', 'ts-loader']
       },
       // css 
       {
         test: /\.css$/,
         include: sourcePath,
+        exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [

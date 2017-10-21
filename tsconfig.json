@@ -13,6 +13,7 @@
     "removeComments": true,
     "strictNullChecks": false,
     "outDir": "build",
+    "baseUrl": "src",
     "lib": [
       "es6",
       "es7",
