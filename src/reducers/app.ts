@@ -1,6 +1,6 @@
-import * as ActionTypes from '../actions/types';
-const jsonMenu:INavMenu = require('../api/menu.json');
-import appConfig from '../api/app-config';
+import * as ActionTypes from 'actions/types';
+import appConfig from 'api/app-config';
+const jsonMenu:INavMenu = require('api/menu.json');
 
 interface Action {
   type: string;
@@ -75,11 +75,11 @@ const initialCart: ICart = {
 };
 
 const initialState = {
+  appConfig,
   cart: initialCart,
   showSearch: false,
   mainNavMenu: jsonMenu,
   showSlideOutCart: false,
-  appConfig
 };
 
 export function app(state = initialState, action: Action): AppState {
