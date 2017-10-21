@@ -22,7 +22,7 @@ export default class ShopForm extends React.PureComponent <Props, State> {
   handleQuantityChange = (event) => {
     const quantity = event.target.value;
     if (isNaN(quantity)) return;
-    this.setState({ quantity });
+    this.setState({ quantity: Number.parseInt(quantity) });
   }
   render() {
     const { quantity } = this.state;

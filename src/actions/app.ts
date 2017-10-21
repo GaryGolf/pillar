@@ -13,8 +13,8 @@ export default class App {
     const type = Actions.HIDE_CART;
     store.dispatch({ type });
   }
-  
-  static addItemToCart(payload):void {
+
+  static addItemToCart(payload:{ product:IProduct, quantity:number }):void {
     const type = Actions.ADD_ITEM_TO_CART;
     store.dispatch({ type, payload });
   }

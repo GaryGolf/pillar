@@ -20,7 +20,7 @@ interface CollectionItem {
 
 export default (props:Props) => {
 
-  const { addItemToCart } = Actions.app;
+  const { showProductCard } = Actions.router;
   const shop = json.map(item => (
     <div key={item.name} 
       className={`col-md-4 col-sm-6 masonry__item`}
@@ -28,7 +28,7 @@ export default (props:Props) => {
       // data-masonry-filter={item.filter}
     >
       <a href="#"
-        onClick={(e) => {e.preventDefault(); addItemToCart(item);}}>
+        onClick={(e) => {e.preventDefault(); showProductCard(item.id);}}>
         <div className="shop-item shop-item-1">
           <div className="shop-item__price hover--reveal">
             {

@@ -48,7 +48,7 @@ const cartItems: ICartItem[] = [
     totalDiscount: 0,
     productVariantId: '',
     featuredImage: {
-      src: 'img/product-small-1.png',
+      src: '/img/product-small-1.png',
     },
   },
   {
@@ -60,7 +60,7 @@ const cartItems: ICartItem[] = [
     totalDiscount: 0,
     productVariantId: '',
     featuredImage: {
-      src: 'img/product-small-2.png',
+      src: '/img/product-small-2.png',
     },
   },
 ];
@@ -94,13 +94,13 @@ export function app(state = initialState, action: Action): AppState {
       return { ...state, showSlideOutCart: false };
 
     case ActionTypes.ADD_ITEM_TO_CART : {
-      const product = action.payload;
+      const { product, quantity } = action.payload;
       const items = [...state.cart.items];
       const exist = items.find(item => item.id === product.id);
       if (exist) {
-        exist.quantity += 1;
+        exist.quantity += quantity;
       } else {
-        items.push({ ...product, quantity: 1 });
+        items.push({ ...product, quantity });
       }
       const subtotal = items.reduce((acc, item) => acc + item.quantity * item.price,0);
       const cart = { ...state.cart, items, subtotal };
