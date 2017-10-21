@@ -18,20 +18,21 @@ declare interface INavMenu {
   items: IMenuItem[];
 }
 
-/*
-
-declare interface INavMenu {
-   name: 'Main' | 'Footer';
-   items: Array<{
-      label: string;
-      url?: string;
-      children: Array<{
-         label: string;
-         url: string;
-      }>
-   }>
+declare interface IProduct {
+  id: string;
+  name: string;
+  price: number;
+  productId: string;
+  totalDiscount: number;
+  productVariantId: string;
+  featuredImage: {
+     src: string;
+  };
+  description?: string;
+  information?: {
+    [label:string]: string;
+  };
 }
-*/
 declare type CurrencyCode = 'USD' | 'GBP';
 
 declare interface ICartItem {

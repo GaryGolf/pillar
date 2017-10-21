@@ -7,4 +7,8 @@ export default class Router {
     store.dispatch(reduxPush(url));
   }
 
+  static showProductCard(id:string): void {
+    store.dispatch(reduxPush(`/product-card/${id}`));
+  }
+
 }

@@ -10,7 +10,7 @@ import Home from 'containers/home-business-classic';
 import Signup from 'containers/page-signup';
 import Business from 'containers/business';
 import HomeShopSlider from 'containers/home-shop-slider';
-import ShopProduct from 'containers/shop-product-vanilla';
+import ProductCard from 'containers/shop-product-vanilla';
 import BlogCards from 'containers/blog-cards-large';
 import BlogPost from 'containers/blog-post-image-header';
 import ContactForm from 'containers/page-contact-form-simple';
@@ -21,7 +21,7 @@ const routes = [
   { path: '/signup', action: () => <Signup/> },
   { path: '/business', action: () => <Business/> },
   { path: '/home-shop-slider', action: () => <HomeShopSlider/> },
-  { path: '/shop-product-vanilla', action: () => <ShopProduct/> },
+  { path: '/product-card/:id', action: context => <ProductCard id={context.params.id}/> },
   { path: '/blog-cards-large', action: () => <BlogCards/> },
   { path: '/blog-post-image-header', action: () => <BlogPost/> },
   { path: '/page-contact-form-simple', action: () => <ContactForm/> },
