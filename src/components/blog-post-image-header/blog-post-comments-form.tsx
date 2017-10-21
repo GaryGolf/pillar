@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { push } from 'redux-first-routing';
-import * as Actions from '../../constants/actions';
 
 interface Props {}
 interface State {

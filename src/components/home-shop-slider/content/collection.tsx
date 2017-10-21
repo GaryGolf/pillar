@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Actions from '../../../actions';
-import { money } from '../../../helpers/utils';
-const json: CollectionItem[] = require('../../../api/collection.json');
+import Actions from 'actions';
+import { money } from 'helpers/utils';
+const json: CollectionItem[] = require('api/collection.json');
 
 interface Props {}
 

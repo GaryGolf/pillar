@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ChildMenu from './menu-childern-template';
-import Actions from '../../actions';
+import Actions from 'actions';
 
 interface Props {
   active: boolean;

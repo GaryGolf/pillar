@@ -1,7 +1,7 @@
 import * as React from 'react';
 import LogoModule from './logo-module';
 import MenuModule from './menu-module';
-import Actions from '../../actions/app';
+import Actions from 'actions/app';
 
 interface Props {
   transparent?: boolean;

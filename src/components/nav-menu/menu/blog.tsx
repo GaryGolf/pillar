@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Link from '../../link';
+import Link from 'components/common/link';
 
 interface Props {
   active:boolean;
