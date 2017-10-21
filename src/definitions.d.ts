@@ -32,7 +32,7 @@ declare interface INavMenu {
    }>
 }
 */
-declare type CurrencyCode = 'USD';
+declare type CurrencyCode = 'USD' | 'GBP';
 
 declare interface ICartItem {
    id: string;
@@ -56,9 +56,31 @@ declare interface ICart {
    items: Array<ICartItem>;
 }
 
+declare interface AppConfig {
+   ecommerce: {
+      currencyCode: CurrencyCode;
+   };
+   social?: null | {
+      FacebookURL?: string;
+      InstagramURL?: string;
+      YouTubeURL?: string;
+      TwitterURL?: string;
+      LinkedInURL?: string;
+      FlickrURL?: string;
+      TripAdvisorURL?: string;
+      VimeoURL?: string;
+      GooglePlusURL?: string;
+      PinterestURL?: string;
+   };
+   theme: {
+      primaryColor: string;
+   };
+}
+
 declare type AppState = {
    cart: ICart;
    showSearch: boolean;
    mainNavMenu: INavMenu;
    showSlideOutCart: boolean;
+   appConfig: AppConfig;
 }

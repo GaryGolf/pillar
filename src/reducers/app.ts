@@ -1,5 +1,6 @@
 import * as ActionTypes from '../actions/types';
 const jsonMenu:INavMenu = require('../api/menu.json');
+import appConfig from '../api/app-config';
 
 interface Action {
   type: string;
@@ -73,22 +74,22 @@ const initialCart: ICart = {
   items: cartItems,
 };
 
-
 const initialState = {
   cart: initialCart,
   showSearch: false,
   mainNavMenu: jsonMenu,
-  showSlideOutCart: false,  
+  showSlideOutCart: false,
+  appConfig
 };
 
 export function app(state = initialState, action: Action): AppState {
-  
+
   switch (action.type) {
 
     // Cart
     case ActionTypes.SHOW_CART :
       return { ...state, showSlideOutCart: true };
-    
+
     case ActionTypes.HIDE_CART :
       return { ...state, showSlideOutCart: false };
 
@@ -105,7 +106,7 @@ export function app(state = initialState, action: Action): AppState {
       const cart = { ...state.cart, items, subtotal };
       return { ...state, cart };
     }
-    
+
     case ActionTypes.REMOVE_CART_ITEM : {
       const items = state.cart.items.filter(item => item.id !== action.payload);
       const subtotal = items.reduce((acc, item) => acc + item.quantity * item.price,0);
@@ -116,7 +117,7 @@ export function app(state = initialState, action: Action): AppState {
     // Search
     case ActionTypes.SHOW_SEARCH :
       return { ...state, showSearch: true };
-    
+
     case ActionTypes.HIDE_SEARCH :
       return { ...state, showSearch: false };
 
