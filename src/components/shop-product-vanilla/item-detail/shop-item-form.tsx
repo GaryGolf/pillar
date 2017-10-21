@@ -1,5 +1,8 @@
 import * as React from 'react';
+import { money } from 'helpers/utils';
+
 interface Props {
+  product: IProduct;
   onSubmit(quantity:number):void;
 }
 interface State {
@@ -23,12 +26,43 @@ export default class ShopForm extends React.PureComponent <Props, State> {
   }
   render() {
     const { quantity } = this.state;
+    const { product } = this.props;
+
+    const oldPrice = !product.totalDiscount ? null :  (
+      <span className="type--strikethrough">
+        {money(product.price + product.totalDiscount)}
+      </span>
+    );
+    
+    const description = !product.description ? null : (
+      <div className="item__description">
+        <h6>Description:</h6>
+        <p>{product.description}</p>
+      </div>
+    );
+
+    const information = !product.information ? null : (
+      <div className="item__description">
+        <h6>Information:</h6>
+        {
+          Object.keys(product.information)
+            .map(label => (
+              <div key={label} className="item__subinfo">
+                <span>{label}</span>
+                <span>{product.information[label]}</span>
+              </div>
+            ))
+        }
+      </div>
+    );
+
+
     return (
       <div>
-        <div className="item__title"><h4>Lucas Wrist Watch</h4></div>
+        <div className="item__title"><h4>{product.name}</h4></div>
         <div className="item__price">
-          <span className="type--strikethrough">$249.00</span>
-          <span>$189.00</span>
+          {oldPrice}
+          <span>{money(product.price)}</span>
         </div>
         <form className="item__addtocart" onSubmit={this.handleSubmit}>
           <input type="text" 
@@ -38,37 +72,8 @@ export default class ShopForm extends React.PureComponent <Props, State> {
           />
           <button type="submit" className="btn btn--primary">Add To Cart</button>
         </form>
-        <div className="item__description">
-          <h6>Description:</h6>
-          <p>
-            A sturdy, handwoven fabric makes this American Apparel indigo-T 
-            a dependable addition to your casual wardrobe. This is a no 
-            bullshit plain ol’ t-shirt.
-          </p>
-        </div>
-        <div className="item__description">
-          <h6>Information:</h6>
-          <div className="item__subinfo">
-            <span>Fabric</span>
-            <span>100% Cotton</span>
-          </div>
-          <div className="item__subinfo">
-            <span>Origin</span>
-            <span>Handmade in Aus</span>
-          </div>
-          <div className="item__subinfo">
-            <span>Weight</span>
-            <span>280gm - 340gm</span>
-          </div>
-          <div className="item__subinfo">
-            <span>Sizes</span>
-            <span>S,M,L,XL</span>
-          </div>
-          <div className="item__subinfo">
-            <span>SKU</span>
-            <span>472843-4</span>
-          </div>
-        </div>
+        {description}
+        {information}
         <div className="item__description">
           <hr/>
           <ul className="social-list">

@@ -18,7 +18,7 @@ export default (props:Props) => {
                     <span>$69.00</span>
                   </div>
                   <div className="shop-item__image">
-                    <img alt="product" src="img/product-large-2.jpg"/>
+                    <img alt="product" src="/img/product-large-2.jpg"/>
                   </div>
                   <div className="shop-item__title"><h5>Earl Sweatshirt</h5></div>
                 </div>
@@ -33,7 +33,7 @@ export default (props:Props) => {
                     <span>$299.00</span>
                   </div>
                   <div className="shop-item__image">
-                    <img alt="product" src="img/product-large-7.jpg"/>
+                    <img alt="product" src="/img/product-large-7.jpg"/>
                   </div>
                   <div className="shop-item__title">
                     <h5>Bruce Leather Shoes</h5>
@@ -49,7 +49,7 @@ export default (props:Props) => {
                     <span>$59.00</span>
                   </div>
                   <div className="shop-item__image">
-                    <img alt="product" src="img/product-large-4.jpg"/>
+                    <img alt="product" src="/img/product-large-4.jpg"/>
                   </div>
                   <div className="shop-item__title">
                     <h5>Bonnie Denim Tote</h5>

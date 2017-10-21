@@ -7,8 +7,8 @@ export default (props:Props) => {
   return (
     <div className="nav-module logo-module left">
       <Link to="/">
-        <img className="logo logo-dark" alt="logo" src="img/logo-dark.png"/>
-        <img className="logo logo-light" alt="logo" src="img/logo-light.png"/>
+        <img className="logo logo-dark" alt="logo" src="/img/logo-dark.png"/>
+        <img className="logo logo-light" alt="logo" src="/img/logo-light.png"/>
       </Link>
     </div>
   );

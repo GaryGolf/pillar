@@ -3,17 +3,25 @@
     "id": "77",
     "name": "Lucas Wrist Watch",
     "featuredImage": {
-      "src": "img/product-large-5.jpg"
+      "src": "/img/product-large-5.jpg"
     },
     "price": 299,
     "totalDiscount": 30,
-    "productVariantId": "sfg-234523546"
+    "productVariantId": "sfg-234523546",
+    "description" : "A sturdy, handwoven fabric makes this American Apparel indigo-T a dependable addition to your casual wardrobe. This is a no bullshit plain ol’ t-shirt.",
+    "information" : {
+      "Fabric": "100% Cotton",
+      "Origin": "Handmade in Aus",
+      "Weight": "280gm - 340gm",
+      "Sizes":  "S,M,L,XL",
+      "SKU4":   "72843-4"
+    }
   },
   {
     "id": "1",
     "name": "Dave Wool Beanie",
     "featuredImage": {
-      "src": "img/product-large-3.jpg"
+      "src": "/img/product-large-3.jpg"
     },
     "price": 34,
     "totalDiscount": 0,
@@ -23,7 +31,7 @@
     "id": "79",
     "name": "Earl Sweatshirt",
     "featuredImage": {
-      "src": "img/product-large-2.jpg"
+      "src": "/img/product-large-2.jpg"
     },
     "price": 49.00,
     "totalDiscount": 40,
@@ -32,7 +40,7 @@
   {
     "id": "80",
     "name": "Logan Slub Tee",
-    "featuredImage": { "src": "img/product-large-8.jpg"} ,
+    "featuredImage": { "src": "/img/product-large-8.jpg"} ,
     "price": 59.00,
     "totalDiscount": 0,
     "productVariantId": "sfg-234523546"
@@ -41,7 +49,7 @@
     "id": "81",
     "name": "Hunter Formal Shirt",
     "featuredImage": {
-      "src": "img/product-large-9.jpg"
+      "src": "/img/product-large-9.jpg"
     },
     "price": 109.99,
     "totalDiscount": 0,
@@ -51,7 +59,7 @@
     "id": "82",
     "name": "Kenneth Leather Wallet",
     "featuredImage": {
-      "src": "img/product-large-10.jpg"
+      "src": "/img/product-large-10.jpg"
     },
     "price": 75,
     "totalDiscount": 0,

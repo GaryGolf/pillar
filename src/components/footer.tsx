@@ -9,7 +9,7 @@ export default (props:Props) => {
       <div className="container">
         <div className="row">
           <div className="col-md-3 col-sm-4">
-            <img alt="logo" className="logo" src="img/logo-light.png"/>
+            <img alt="logo" className="logo" src="/img/logo-light.png"/>
             <p>
                 <em>Digital Design Melbourne</em>
             </p>
