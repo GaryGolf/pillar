@@ -6,11 +6,11 @@ interface Props {}
 export default class PartnersSlider extends React.PureComponent <Props, null> {
   private slider;
   private interval:number;
-  private partnersURL:string[];
+  private urls:string[];
   constructor(props:Props) {
     super(props);
 
-    this.partnersURL = [
+    this.urls = [
       '/img/partner1.png',
       '/img/partner2.png',
       '/img/partner3.png',
@@ -30,7 +30,9 @@ export default class PartnersSlider extends React.PureComponent <Props, null> {
   }
   
   render() {
-    const partners: JSX.Element[] = this.partnersURL
+    const width = document.documentElement.clientWidth;
+    const perPage = Math.min(Math.floor(width/120),6);
+    const partners: JSX.Element[] = [...this.urls,...this.urls,...this.urls]
       .map((url,idx) => (
         <div key={idx} >
           <img alt="slide" src={url}/>
@@ -43,7 +45,7 @@ export default class PartnersSlider extends React.PureComponent <Props, null> {
             <div className="col-sm-12">
               <div className="slider">
              
-              <Carousel ref={el => this.slider = el} perPage={4} loop >
+              <Carousel ref={el => this.slider = el} perPage={perPage} loop >
                 {partners}
               </Carousel>
               </div>
