@@ -8,6 +8,7 @@ import history from '../history';
 
 interface Props {
   routes: any;
+  pathname: string;
 }
 
 export default class Router extends React.Component <Props, null> {
@@ -28,7 +29,7 @@ export default class Router extends React.Component <Props, null> {
   
   componentDidMount() {
     startListener(history, store);
-    this.renderComponent(location);
+    this.renderComponent(this.props.pathname);
   }
 
   componentWillUnmount() {

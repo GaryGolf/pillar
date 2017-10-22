@@ -25,5 +25,6 @@ const routes = [
 ];
 
 const container =  document.getElementById('layout');
+const { pathname } = location;
     
-ReactDOM.render(<Router routes={routes}/>, container);
+ReactDOM.render(<Router routes={routes} pathname={pathname}/>, container);
