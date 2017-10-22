@@ -24,18 +24,24 @@ export default class ShopProduct extends React.PureComponent <Props, State> {
   }
 
 
-
   render() {
     const { id } = this.props;
-    const product:IProduct = collection.find(item => item.id === id);
+    const product:IProduct = collection
+      .find(item => item.id === id);
+
+    const related:IProduct[] = collection
+      .filter(item => item.id !== id)
+      .slice(0,3);
+
     if (!product) return null; // TODO redirect to shop
+
     return (
       <div className="main-container transition--fade transition--active">
         <NavMenu />
         <Cart />
         <Search />
         <ShopItemDetails product={product}/>
-        <RelatedProducts id={product.id} collection={collection}/>
+        <RelatedProducts collection={related}/>
         <Footer/>
       </div>
     );

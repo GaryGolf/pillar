@@ -3,41 +3,37 @@ import Actions from 'actions';
 import { money } from 'helpers/utils';
 
 interface Props {
-  id: string;
   collection: IProduct[];
 }
 
 export default (props:Props) => {
-  const { id, collection } = props;
+  const { collection } = props;
   const { showProductCard }  = Actions.router;
-  if (!id || !collection) return null;
+  if (!collection) return null;
 
   const relatedProducts = collection
-    .filter(item => item.id !== id)
-    .slice(0,3)
-    .map((product:IProduct) => {
-      const oldPrice = !product.totalDiscount ? null :  (
-        <span className="type--strikethrough">
-          {money(product.price + product.totalDiscount)}
-        </span>
-      );
-      return (
-        <div key={product.id} className="col-sm-4">
-          <a href="#"  onClick={(e) => {e.preventDefault(); showProductCard(product.id);}}>
-            <div className="shop-item shop-item-1">
-              <div className="shop-item__price hover--reveal">
-                {oldPrice}
-                <span>{money(product.price)}</span>
-              </div>
-              <div className="shop-item__image">
-                <img alt="product" src={product.featuredImage.src}/>
-              </div>
-              <div className="shop-item__title"><h5>{product.name}</h5></div>
+    .map((product:IProduct) => (
+      <div key={product.id} className="col-sm-4">
+        <a href="#"  onClick={(e) => {e.preventDefault(); showProductCard(product.id);}}>
+          <div className="shop-item shop-item-1">
+            <div className="shop-item__price hover--reveal">
+              {
+                !product.totalDiscount ? null :  (
+                  <span className="type--strikethrough">
+                    {money(product.price + product.totalDiscount)}
+                  </span>
+                )
+              }
+              <span>{money(product.price)}</span>
             </div>
-          </a>
-        </div>
-      );
-    });
+            <div className="shop-item__image">
+              <img alt="product" src={product.featuredImage.src}/>
+            </div>
+            <div className="shop-item__title"><h5>{product.name}</h5></div>
+          </div>
+        </a>
+      </div>
+    ));
 
   return (
     <section>
