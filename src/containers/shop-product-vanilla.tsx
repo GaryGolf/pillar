@@ -5,6 +5,7 @@ import Cart from 'components/cart';
 import Search from 'components/search';
 import ShopItemDetails from 'components/shop-product-vanilla/item-detail';
 import RelatedProducts from 'components/shop-product-vanilla/related-products';
+import Actions from 'actions';
 
 const  collection:IProduct[] = require('api/collection.json');
 const { connect } = require('react-redux');
@@ -33,7 +34,10 @@ export default class ShopProduct extends React.PureComponent <Props, State> {
       .filter(item => item.id !== id)
       .slice(0,3);
 
-    if (!product) return null; // TODO redirect to shop
+    if (!product) {
+      Actions.router.push('/home-shop-slider'); 
+      return null;
+    }
 
     return (
       <div className="main-container transition--fade transition--active">
