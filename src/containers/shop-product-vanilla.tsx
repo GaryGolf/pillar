@@ -35,7 +35,7 @@ export default class ShopProduct extends React.PureComponent <Props, State> {
       .slice(0,3);
 
     if (!product) {
-      Actions.router.push('/home-shop-slider'); 
+      Actions.router.goToShop(); 
       return null;
     }
 

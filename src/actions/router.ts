@@ -11,4 +11,12 @@ export default class Router {
     store.dispatch(reduxPush(`/product-card/${id}`));
   }
 
+  static goHome() {
+    store.dispatch(reduxPush('/'));
+  }
+
+  static goToShop() {
+    store.dispatch(reduxPush('/home-shop-slider'));
+  }
+
 }
