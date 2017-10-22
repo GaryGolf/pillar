@@ -31,7 +31,7 @@ export default class PartnersSlider extends React.PureComponent <Props, null> {
   
   render() {
     const width = document.documentElement.clientWidth;
-    const perPage = Math.min(Math.floor(width/120),6);
+    const perPage = Math.min(Math.floor(width / 120),6);
     const partners: JSX.Element[] = [...this.urls,...this.urls,...this.urls]
       .map((url,idx) => (
         <div key={idx} >
