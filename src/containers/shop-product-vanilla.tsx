@@ -25,6 +25,7 @@ export default class ShopProduct extends React.PureComponent <Props, State> {
   }
 
 
+
   render() {
     const { id } = this.props;
     const product:IProduct = collection
@@ -38,6 +39,8 @@ export default class ShopProduct extends React.PureComponent <Props, State> {
       Actions.router.goToShop(); 
       return null;
     }
+
+    document.documentElement.scrollTop = 0;
 
     return (
       <div className="main-container transition--fade transition--active">
