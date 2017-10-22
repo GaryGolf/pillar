@@ -1,5 +1,5 @@
 import * as React from 'react';
-// import OwlCarousel from 'react-owl-carousel';
+import Carousel from 'react-siema';
 
 interface Props {}
 
@@ -11,7 +11,7 @@ export default (props:Props) => {
     .map((item,idx) => (
       <div key={idx} style={{ opacity:.3 }}>
         <img alt="img" 
-          src={`img/partner${idx + 1}.png`} 
+          src={`/img/partner${idx + 1}.png`} 
           style={{ width:'auto' }}
         />
       </div>
@@ -29,6 +29,9 @@ export default (props:Props) => {
           >
             {partners}
           </OwlCarousel> */}
+          {/* <Carousel>
+
+          </Carousel> */}
         </div>
       </div>
   </section>

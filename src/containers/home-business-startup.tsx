@@ -4,6 +4,7 @@ import Search from '../components/search';
 import Footer from '../components/footer';
 import NavMenu from '../components/nav-menu';
 import HomeBusinesStartup from '../components/home-business-startup';
+import PartnersSlider from 'components/common/partners-slider';
 
 
 interface Props {}
@@ -29,6 +30,7 @@ export default class ContactForm extends React.Component <Props, State> {
         <HomeBusinesStartup.Robust/>
         <HomeBusinesStartup.Pricing/>
         <HomeBusinesStartup.Start/>
+        <PartnersSlider/>
         <Footer/>           
       </div>
     );
