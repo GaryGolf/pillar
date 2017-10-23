@@ -7,7 +7,8 @@ const sourcePath = path.join(__dirname, './src')
 const PRODUCTION = process.argv.indexOf('-p') >= 0
 const outPath = path.join(__dirname, './dist')
 
-module.exports = {
+const clientConfig = {
+  name: 'pillar client config',
   context: sourcePath,
   entry: {
     bundle: './index.tsx'
@@ -110,3 +111,102 @@ module.exports = {
     net: 'empty'
   }
 }
+
+
+const serverConfig = {
+  name: "pillar server config",
+  context: sourcePath,
+  entry: {
+    server: './server.tsx'
+  },
+  output: {
+    path: outPath,
+    publicPath: '/',
+    filename: '[name].js',
+  },
+  target: 'node',
+  devtool: false,
+  resolve: {
+    extensions: ['.js', '.ts', '.tsx'],
+    modules: ['node_modules', sourcePath]
+    // Fix webpack's default behavior to not load packages with jsnext:main module
+    // https://github.com/Microsoft/TypeScript/issues/11677 
+   // mainFields: ['main']
+  },
+  module: {
+    rules: [
+      // .ts, .tsx
+      {
+        test: /\.tsx?$/,
+        include: sourcePath,
+        exclude: /node_modules/,
+        use: 'ts-loader' 
+      },
+      // css 
+      {
+        test: /\.css$/,
+        include: sourcePath,
+        exclude: /node_modules/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              query: {
+                modules: true,
+                sourceMap: !PRODUCTION,
+                importLoaders: 1,
+                localIdentName: '[local]__[hash:base64:5]'
+              }
+            },
+            {
+              loader: 'postcss-loader'
+            }
+          ]
+        })
+      },
+      // static assets 
+      { test: /\.json$/, use: 'json-loader' },
+      { test: /\.html$/, use: 'html-loader' },
+      { test: /\.png$/, use: 'url-loader?limit=10000' },
+      { test: /\.jpg$/, use: 'file-loader' }
+    ],
+  },
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        context: sourcePath,
+        postcss: [
+          require('postcss-smart-import')({ addDependencyTo: webpack }),
+          require('postcss-cssnext')(),
+          require('postcss-reporter')(),
+          require('postcss-browser-reporter')({ disabled: PRODUCTION }),
+        ]
+      }
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
+    new ExtractTextPlugin({
+      filename: 'server.bundle.css',
+      disable: true
+    })
+  ],
+  externals: {
+    express: 'express'
+  },
+  node: {
+    // workaround for webpack-dev-server issue 
+    // https://github.com/webpack/webpack-dev-server/issues/60#issuecomment-103411179
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  }
+}
+
+module.exports = PRODUCTION ? [clientConfig, serverConfig] : clientConfig;
+
+
+// module.exports = clientConfig;
