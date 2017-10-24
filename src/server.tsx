@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { renderToString } from 'react-dom/server';
-import * as express from 'express';
+// import * as express from 'express';
+const { express } = require('express');
 import Router from 'containers/router';
 
 import Home from 'containers/home-business-classic';
@@ -36,7 +37,8 @@ app.listen(8080, () => {
 
 
 function render(req, res) {
-  const text = renderToString(<Router routes={routes} pathname={'/'}/>);
+  // const text = renderToString(<Router routes={routes} pathname={'/'}/>);
+  const text = renderToString(<Home/>);
   const html = inject('<h1>Hello</h1>');
   res.send(html);
 }
