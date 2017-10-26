@@ -14,8 +14,8 @@ export default class LandingAppVideo extends React.PureComponent <Props, State> 
     };
   }
 
-  handlePlay = () => this.setState({ showVideo:true })
-  handleStop = () => this.setState({ showVideo: false })
+  handlePlay = () => this.setState({ showVideo:true });
+  handleStop = () => this.setState({ showVideo: false });
 
   render() {
     const { showVideo } = this.state;
