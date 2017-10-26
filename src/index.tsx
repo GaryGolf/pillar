@@ -11,6 +11,7 @@ import BlogCards from 'containers/blog-cards-large';
 import BlogPost from 'containers/blog-post-image-header';
 import ContactForm from 'containers/page-contact-form-simple';
 import HomeBusinessStartup from 'containers/home-business-startup';
+import HomeLandingApp from 'containers/home-landing-app';
 
 const routes = [
   { path: '', action: () => <Home/> },
@@ -22,6 +23,7 @@ const routes = [
   { path: '/blog-post-image-header', action: () => <BlogPost/> },
   { path: '/page-contact-form-simple', action: () => <ContactForm/> },
   { path: '/home-business-startup', action: () => <HomeBusinessStartup/> },
+  { path: '/home-landing-app', action: () => <HomeLandingApp/> },
 ];
 
 const container =  document.getElementById('layout');
