@@ -5,5 +5,7 @@ import Features3 from './landing-app-features-3';
 import Subscribe from './landing-app-subscribe';
 import Video from './landing-app-video';
 import Download from './landing-app-download';
+import Showcase from './landing-app-showcase';
 
-export default { Cover, Features1, Features2, Features3, Video, Subscribe, Download };
+export default { Cover, Features1, Features2, Features3, Video, 
+  Subscribe, Download, Showcase };

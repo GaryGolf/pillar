@@ -25,6 +25,7 @@ export default class HomeLandingApp extends React.PureComponent <Props, State> {
         <Content.Features1/>
         <Content.Video/>
         <Content.Features2/>
+        <Content.Showcase/>
         <Content.Features3/>
         <Content.Subscribe/>
         <Content.Download/>
