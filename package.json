@@ -88,7 +88,7 @@
     "react-dom": "^16.0.0",
     "react-parallax": "^1.5.0",
     "react-redux": "^5.0.6",
-    "react-siema": "^1.0.1",
+    "react-siema": "https://github.com/scazzy/react-siema.git",
     "redux": "^3.7.2",
     "redux-first-routing": "^0.3.0",
     "redux-promise": "0.5.3",

@@ -4608,9 +4608,9 @@ react-redux@^5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
-react-siema@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-siema/-/react-siema-1.0.1.tgz#7f043f8cb44c4747fe0729542ba52772cd3d57b4"
+"react-siema@https://github.com/scazzy/react-siema.git":
+  version "1.0.2"
+  resolved "https://github.com/scazzy/react-siema.git#14ea9dd3c6bb0eed3478fa607639a65ad97d66f4"
   dependencies:
     react "^15.4.1"
     react-dom "^15.4.1"
