@@ -23,6 +23,7 @@ export default class HomeLandingApp extends React.PureComponent <Props, State> {
         <Search />
         <Content.Cover/>
         <Content.Features1/>
+        <Content.Video/>
         <Footer/>           
       </div>
     );
