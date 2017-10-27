@@ -1,6 +1,6 @@
 import * as React from 'react';
 import NavBar from '../components/business-page/nav-bar';
-import Content from '../components/home-shop-slider/content';
+import Content from '../components/home-shop-slider';
 import Cart from '../components/cart';
 import Search from '../components/search';
 import Footer from '../components/footer';
