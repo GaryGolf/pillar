@@ -3,15 +3,18 @@ import TabComponent from 'components/common/tab';
 import Tabs from './tabs';
 
 interface Props {}
-
+interface Tab {
+  title: string;
+  component: JSX.Element;
+}
 
 export default class Features extends React.Component <Props, null> {
-  private tabs: any
+  private tabs: Tab[];
   constructor(props:Props) {
     super(props);
 
     this.tabs = [
-      { title: "Craftsmanship", component: <Tabs.Craftsmanship/> },
+      { title: 'Craftsmanship', component: <Tabs.Craftsmanship/> },
       { title: 'Sustainability', component: <Tabs.Sustainability/> },
       { title: 'Service Guarantee', component: <Tabs.ServiceGuarantee/> },
     ];

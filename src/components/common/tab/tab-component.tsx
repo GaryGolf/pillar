@@ -27,19 +27,20 @@ export default class TabComponent extends React.PureComponent <Props, State> {
     if (this.props.current !== tab) this.setState({ tab });
   }
 
-  handleTabClick = (tab) => this.setState({ tab });
+  handleTabClick = tab => this.setState({ tab });
 
   render() {
 
     const buttons = this.props.tabs
-      .map((tab,idx) => <Button
-        key={idx}
-        tab={idx}
-        active={this.state.tab === idx}
-        title={tab.title}
-        onClick={this.handleTabClick}
-      />
-    );
+      .map((tab,idx) => (
+        <Button
+          key={idx}
+          tab={idx}
+          active={this.state.tab === idx}
+          title={tab.title}
+          onClick={this.handleTabClick}
+        />
+      ));
 
     return (
       <div className="tabs-container tabs-1">
