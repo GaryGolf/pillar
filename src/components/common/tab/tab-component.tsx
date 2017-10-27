@@ -42,20 +42,14 @@ export default class TabComponent extends React.PureComponent <Props, State> {
     );
 
     return (
-      <section className="bg--secondary space--sm shop-tabs">
-      <div className="container">
-        <div className="row">
-          <div className="tabs-container tabs-1">
-            <ul className="tabs text-center">
-              {buttons}
-            </ul>
-            <ul className="tabs-content">
-              {this.props.tabs[this.state.tab].component}
-            </ul>
-          </div>
-        </div>
+      <div className="tabs-container tabs-1">
+        <ul className="tabs text-center">
+          {buttons}
+        </ul>
+        <ul className="tabs-content">
+          {this.props.tabs[this.state.tab].component}
+        </ul>
       </div>
-  </section>
     );
   }
 }
