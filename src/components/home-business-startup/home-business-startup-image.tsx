@@ -23,13 +23,6 @@ export default class StartupImage extends React.PureComponent <Props, State> {
 
     const { showVideo } = this.state;
 
-    const imageHolderStyle = {
-      transform: 'translate3d(0px, 12.5px, 0px)', 
-      background: 'url(img/hero7.jpg)', 
-      opacity: 1,
-      top: 0, 
-    };
-
     return (
       <Parallax bgImage="/img/hero7.jpg" strength={200}>
         <section className="height-100 imagebg cover cover-4 parallax" 
