@@ -42,13 +42,20 @@ export default class TabComponent extends React.PureComponent <Props, State> {
         />
       ));
 
+    const components = this.props.tabs
+      .map((tab,idx) => (
+        <li key={idx} className={this.state.tab === idx ? 'active' : ''}>
+          {tab.component}
+        </li>
+      ));
+
     return (
       <div className="tabs-container tabs-1">
         <ul className="tabs text-center">
           {buttons}
         </ul>
         <ul className="tabs-content">
-          {this.props.tabs[this.state.tab].component}
+          {components}
         </ul>
       </div>
     );
