@@ -78,6 +78,7 @@ const initialState = {
   appConfig,
   cart: initialCart,
   showSearch: false,
+  showPromo: true,
   mainNavMenu: jsonMenu,
   showSlideOutCart: false,
 };
@@ -121,6 +122,13 @@ export function app(state = initialState, action: Action): AppState {
     case ActionTypes.HIDE_SEARCH :
       return { ...state, showSearch: false };
 
+    // Promo
+    case ActionTypes.SHOW_PROMO :
+      return { ...state, showPromo: true };
+
+    case ActionTypes.HIDE_PROMO :
+      return { ...state, showPromo: false };
+      
     // Menu
     case ActionTypes.SET_ACTIVE_MENU : {
       const active = action.payload;

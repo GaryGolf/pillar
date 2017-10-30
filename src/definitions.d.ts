@@ -83,6 +83,7 @@ declare interface AppConfig {
 declare type AppState = {
    cart: ICart;
    showSearch: boolean;
+   showPromo: boolean;
    mainNavMenu: INavMenu;
    showSlideOutCart: boolean;
    appConfig: AppConfig;

@@ -34,6 +34,17 @@ export default class App {
     const type = Actions.HIDE_SEARCH;
     store.dispatch({ type });
   }
+
+  // Promo
+  static showPromo(): void {
+    const type = Actions.SHOW_PROMO;
+    store.dispatch({ type });
+  }
+  
+  static hidePromo(): void {
+    const type = Actions.HIDE_PROMO;
+    store.dispatch({ type });
+  }
   
   // Menu
   static setActiveMenu(label:string): void {

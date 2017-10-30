@@ -1,29 +1,31 @@
 import * as React from 'react';
+import Actions from 'actions/app';
+const { connect } = require('react-redux');
 
 interface Props {
   active?: boolean;
 }
-interface State {
-  showPromo: boolean;
-}
+interface State {}
 
+@connect(
+  store => ({
+    active: store.app.showPromo,
+  }),
+)
 export default class ShopSliderPromo extends React.PureComponent <Props, State> {
 
   constructor(props:Props) {
     super(props);
-    this.state = {
-      showPromo: props.active,
-    };
   }
 
   hidePromo = (event) => { 
     event.preventDefault();
-    this.setState({ showPromo: false });
+    Actions.hidePromo();
   }
 
   render() {
 
-    if (!this.state.showPromo) return null;
+    if (!this.props.active) return null;
 
     return (
       <div className="modal-container modal-active" 
@@ -33,7 +35,7 @@ export default class ShopSliderPromo extends React.PureComponent <Props, State> 
         >
         <div className="modal-content bg-white imagebg" 
           data-width="50%" data-height="50%" data-overlay="5" 
-          onClick={event=>event.stopPropagation()}
+          onClick={event => event.stopPropagation()}
           style={{ width:'50%', height:'50%' }}>
           <div className="background-image-holder" 
             style={{ background:'url(/img/hero20.jpg)',opacity: 1 }}>
