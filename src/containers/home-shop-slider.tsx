@@ -20,7 +20,7 @@ export default class HomeShopSlider extends React.Component <Props, State> {
         <NavBar />
         <Cart />
         <Search />
-        <Content.Promo/>
+        <Content.Promo active />
         <Content.Quotation/>
         <Content.Collection/>
         <Content.Features/>
