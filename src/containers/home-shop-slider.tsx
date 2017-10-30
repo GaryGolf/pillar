@@ -1,5 +1,5 @@
 import * as React from 'react';
-import NavBar from '../components/business-page/nav-bar';
+import NavMenu from '../components/nav-menu';
 import Content from '../components/home-shop-slider';
 import Cart from '../components/cart';
 import Search from '../components/search';
@@ -17,15 +17,16 @@ export default class HomeShopSlider extends React.Component <Props, State> {
 
     return (
       <div className="main-container transition--fade transition--active">
-        <NavBar />
+        <NavMenu noUtilityBar transparent />
         <Cart />
         <Search />
-        <Content.Promo/>
+        <Content.Header/>
         <Content.Quotation/>
         <Content.Collection/>
         <Content.Features/>
         <Content.Subscribe/>
         <Footer/>
+        <Content.Promo/>
       </div>
     );
   }
